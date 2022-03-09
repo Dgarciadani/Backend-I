@@ -1,19 +1,19 @@
 package arboles;
 
 public class Arbol {
- private int alto;
- private int horizontal;
- private String color;
- private String tipo;
- private int contador;
+    private int alto;
+    private int horizontal;
+    private String color;
+    private String tipo;
+    private int contador;
 
     public Arbol(int alto, int horizontal, String color, String tipo) {
         this.alto = alto;
         this.horizontal = horizontal;
         this.color = color;
         this.tipo = tipo;
-        contador ++;
-        System.out.println("Contador:"+ contador);
+        contador++;
+        System.out.println("Contador:" + contador);
     }
 
     public int getAlto() {
