@@ -7,7 +7,7 @@ public class ArbolFactory {
     private static HashMap<String, Arbol> bosque = new HashMap<>();
 
     public Arbol getArboles(int alto, int ancho, String color, String tipo) {
-        String clave = "key:" + alto + ":" + ancho + ":" + "color" + ":" + "tipo";
+        String clave = "key:" + alto + ":" + ancho + ":" + color + ":" + tipo;
         System.out.println(clave);
 
         if (!bosque.containsKey(clave)) {
