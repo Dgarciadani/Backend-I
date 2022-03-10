@@ -1,0 +1,73 @@
+2022-03-10 10:12:10 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: Could not open file /Volumes/GoogleDrive/Mi unidad/CTD/Backend I/Clase_11_DB_JDBC_H2/Database/my.mv.db [2.1.210/1]"
+General error: "org.h2.mvstore.MVStoreException: Could not open file /Volumes/GoogleDrive/Mi unidad/CTD/Backend I/Clase_11_DB_JDBC_H2/Database/my.mv.db [2.1.210/1]" [50000-210]
+	at org.h2.message.DbException.get(DbException.java:216)
+	at org.h2.message.DbException.convert(DbException.java:414)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:120)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3296)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:585)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:461)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4056)
+	at org.h2.mvstore.db.Store.<init>(Store.java:129)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at TestDB.main(TestDB.java:9)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: Could not open file /Volumes/GoogleDrive/Mi unidad/CTD/Backend I/Clase_11_DB_JDBC_H2/Database/my.mv.db [2.1.210/1]"
+General error: "org.h2.mvstore.MVStoreException: Could not open file /Volumes/GoogleDrive/Mi unidad/CTD/Backend I/Clase_11_DB_JDBC_H2/Database/my.mv.db [2.1.210/1]" [50000-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 18 more
+Caused by: org.h2.mvstore.MVStoreException: Could not open file /Volumes/GoogleDrive/Mi unidad/CTD/Backend I/Clase_11_DB_JDBC_H2/Database/my.mv.db [2.1.210/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:170)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:444)
+	... 12 more
+Caused by: java.io.IOException: Operation not supported
+	at java.base/sun.nio.ch.FileDispatcherImpl.lock0(Native Method)
+	at java.base/sun.nio.ch.FileDispatcherImpl.lock(FileDispatcherImpl.java:96)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1328)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1191)
+	at org.h2.mvstore.FileStore.open(FileStore.java:154)
+	... 13 more
+2022-03-10 10:12:10 database: opening /Volumes/GoogleDrive/Mi unidad/CTD/Backend I/Clase_11_DB_JDBC_H2/Database/my
+org.h2.message.DbException: IO Exception: null
+IO Exception: null [90028-210]
+	at org.h2.message.DbException.get(DbException.java:216)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:164)
+	at org.h2.mvstore.db.Store.<init>(Store.java:140)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at TestDB.main(TestDB.java:9)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: null
+IO Exception: null [90028-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+Caused by: org.h2.mvstore.MVStoreException: Could not open file /Volumes/GoogleDrive/Mi unidad/CTD/Backend I/Clase_11_DB_JDBC_H2/Database/my.mv.db [2.1.210/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:170)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:444)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4056)
+	at org.h2.mvstore.db.Store.<init>(Store.java:129)
+	... 10 more
+Caused by: java.io.IOException: Operation not supported
+	at java.base/sun.nio.ch.FileDispatcherImpl.lock0(Native Method)
+	at java.base/sun.nio.ch.FileDispatcherImpl.lock(FileDispatcherImpl.java:96)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1328)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1191)
+	at org.h2.mvstore.FileStore.open(FileStore.java:154)
+	... 13 more
