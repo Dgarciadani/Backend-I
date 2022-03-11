@@ -1,3 +1,4 @@
+import java.io.PrintStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -6,7 +7,7 @@ import java.sql.Statement;
 public class TestDB {
     public static void main(String[] args) throws Exception {
         //SELECT H2 DRIVER
-        Class.forName("org.h2.Driver").newInstance();
+        Class.forName("org.h2.Driver");//.newInstance(); No Usable
         //CREATE CONNECTION
         Connection conn = DriverManager.getConnection("jdbc:h2:~/test", "sa", "");
         Statement state = conn.createStatement();
