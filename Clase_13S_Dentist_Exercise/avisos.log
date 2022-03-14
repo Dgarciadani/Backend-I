@@ -1,0 +1,20 @@
+[2022-03-14 15:01:30] [ INFO ] [DentistDBTest:&L] Create Table: SUCCESS
+[2022-03-14 15:01:30] [ INFO ] [DentistDBTest:&L] Inser dentist data: SUCCES
+[2022-03-14 15:01:30] [ INFO ] [DentistDBTest:&L] Update dentist data: SUCCESS
+[2022-03-14 15:04:38] [ ERROR] [DentistDBTest:&L] Conn ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-14 15:04:59] [ INFO ] [DentistDBTest:&L] Create Table: SUCCESS
+[2022-03-14 15:04:59] [ INFO ] [DentistDBTest:&L] Inser dentist data: SUCCES
+[2022-03-14 15:04:59] [ ERROR] [DentistDBTest:&L] Update dentist data: ERROR, Parametro "#2" no está fijado
+Parameter "#2" is not set; SQL statement:
+UPDATE Odontologo SET Registry=? WHERE Name=? [90012-210]
+[2022-03-14 15:04:59] [ INFO ] [DentistDBTest:&L] Update dentist data: ERROR, do Rollback
+[2022-03-14 15:04:59] [ INFO ] [DentistDBTest:&L] Conection closed
+[2022-03-14 15:05:21] [ INFO ] [DentistDBTest:&L] Create Table: SUCCESS
+[2022-03-14 15:05:21] [ INFO ] [DentistDBTest:&L] Inser dentist data: SUCCES
+[2022-03-14 15:05:21] [ INFO ] [DentistDBTest:&L] Update dentist data: SUCCESS
+[2022-03-14 15:05:21] [ INFO ] [DentistDBTest:&L] Conection closed
+[2022-03-14 15:12:12] [ INFO ] [DentistDBTest:&L] Create Table: SUCCESS
+[2022-03-14 15:12:12] [ INFO ] [DentistDBTest:&L] Inser dentist data: SUCCES
+[2022-03-14 15:12:12] [ INFO ] [DentistDBTest:&L] Update dentist data: SUCCESS
+[2022-03-14 15:12:12] [ INFO ] [DentistDBTest:&L] Conection closed
