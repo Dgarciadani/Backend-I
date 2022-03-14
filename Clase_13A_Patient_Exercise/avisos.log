@@ -1,0 +1,62 @@
+[2022-03-14 00:35:58] [ ERROR] [HospitalDBTest:&L] try to ser connection: ERROR, No suitable driver found for 
+[2022-03-14 00:37:21] [ ERROR] [HospitalDBTest:&L] try to set connection: ERROR, Error de Sintaxis en sentencia SQL "CREATE TABLE PATIENT(NAME VARCHAR(255) NOT NULL,LASTNAME VARCHAR(255) NOT NULL,ADDRESS VARCHAR(255) NOT NULL,DNI INT  PRIMARY KEY NOT NULL,STARTDATE VARCHAR(255) NOT NULL,[*]USER VARCHAR(50) NOT NULL,PASS VARCHAR(50) NOT NULL);"; se esperaba "identifier"
+Syntax error in SQL statement "CREATE TABLE PATIENT(NAME VARCHAR(255) NOT NULL,LASTNAME VARCHAR(255) NOT NULL,ADDRESS VARCHAR(255) NOT NULL,DNI INT  PRIMARY KEY NOT NULL,STARTDATE VARCHAR(255) NOT NULL,[*]USER VARCHAR(50) NOT NULL,PASS VARCHAR(50) NOT NULL);"; expected "identifier"; SQL statement:
+CREATE TABLE PATIENT(NAME VARCHAR(255) NOT NULL,LASTNAME VARCHAR(255) NOT NULL,ADDRESS VARCHAR(255) NOT NULL,DNI INT  PRIMARY KEY NOT NULL,STARTDATE VARCHAR(255) NOT NULL,USER VARCHAR(50) NOT NULL,PASS VARCHAR(50) NOT NULL); [42001-210]
+[2022-03-14 00:38:29] [ INFO ] [HospitalDBTest:&L] try to set patient data init
+[2022-03-14 00:38:29] [ INFO ] [HospitalDBTest:&L] set patient data: SUCCESS
+[2022-03-14 00:38:29] [ ERROR] [HospitalDBTest:&L] update patient data: ERROR, Error de Sintaxis en sentencia SQL "UPDATE PATIENT SET [*]SET PASS=? WHERE DNI = ?"; se esperaba "identifier"
+Syntax error in SQL statement "UPDATE PATIENT SET [*]SET PASS=? WHERE DNI = ?"; expected "identifier"; SQL statement:
+UPDATE PATIENT SET SET PASS=? WHERE DNI = ? [42001-210]
+[2022-03-14 00:38:52] [ INFO ] [HospitalDBTest:&L] try to set patient data init
+[2022-03-14 00:38:52] [ INFO ] [HospitalDBTest:&L] set patient data: SUCCESS
+[2022-03-14 00:38:52] [ ERROR] [HospitalDBTest:&L] update patient data: ERROR, Parametro "#2" no está fijado
+Parameter "#2" is not set; SQL statement:
+UPDATE PATIENT SET PASS=? WHERE DNI = ? [90012-210]
+[2022-03-14 00:39:05] [ INFO ] [HospitalDBTest:&L] try to set patient data init
+[2022-03-14 00:39:05] [ INFO ] [HospitalDBTest:&L] set patient data: SUCCESS
+[2022-03-14 00:39:56] [ INFO ] [HospitalDBTest:&L] try to set patient data init
+[2022-03-14 00:39:56] [ INFO ] [HospitalDBTest:&L] set patient data: SUCCESS
+[2022-03-14 00:39:56] [ INFO ] [HospitalDBTest:&L] try to update patient data init
+[2022-03-14 00:39:56] [ INFO ] [HospitalDBTest:&L] update patient data: SUCCESS
+[2022-03-14 00:46:15] [ ERROR] [HospitalDBTest:&L] try to set connection: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-14 00:46:36] [ ERROR] [HospitalDBTest:&L] try to set connection: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-14 00:46:36] [ INFO ] [HospitalDBTest:&L] connection closed
+[2022-03-14 00:46:56] [ INFO ] [HospitalDBTest:&L] try to set patient data init
+[2022-03-14 00:46:56] [ INFO ] [HospitalDBTest:&L] set patient data: SUCCESS
+[2022-03-14 00:46:56] [ INFO ] [HospitalDBTest:&L] try to update patient data init
+[2022-03-14 00:46:56] [ INFO ] [HospitalDBTest:&L] update patient data: SUCCESS
+[2022-03-14 00:46:56] [ INFO ] [HospitalDBTest:&L] connection closed
+[2022-03-14 00:51:13] [ INFO ] [HospitalDBTest:&L] try to set patient data init
+[2022-03-14 00:51:13] [ INFO ] [HospitalDBTest:&L] set patient data: SUCCESS
+[2022-03-14 00:51:13] [ INFO ] [HospitalDBTest:&L] try to update patient data init
+[2022-03-14 00:51:13] [ INFO ] [HospitalDBTest:&L] update patient data: SUCCESS
+[2022-03-14 00:51:13] [ INFO ] [HospitalDBTest:&L] connection closed
+[2022-03-14 00:51:43] [ INFO ] [HospitalDBTest:&L] try to set patient data init
+[2022-03-14 00:51:43] [ INFO ] [HospitalDBTest:&L] set patient data: SUCCESS
+[2022-03-14 00:51:43] [ INFO ] [HospitalDBTest:&L] try to update patient data init
+[2022-03-14 00:51:43] [ INFO ] [HospitalDBTest:&L] update patient data: SUCCESS
+[2022-03-14 00:51:43] [ INFO ] [HospitalDBTest:&L] connection closed
+[2022-03-14 00:52:08] [ INFO ] [HospitalDBTest:&L] try to set patient data init
+[2022-03-14 00:52:08] [ INFO ] [HospitalDBTest:&L] set patient data: SUCCESS
+[2022-03-14 00:52:08] [ INFO ] [HospitalDBTest:&L] try to update patient data init
+[2022-03-14 00:52:08] [ INFO ] [HospitalDBTest:&L] update patient data: SUCCESS
+[2022-03-14 00:52:08] [ INFO ] [HospitalDBTest:&L] connection closed
+[2022-03-14 00:52:21] [ INFO ] [HospitalDBTest:&L] try to set patient data init
+[2022-03-14 00:52:21] [ INFO ] [HospitalDBTest:&L] set patient data: SUCCESS
+[2022-03-14 00:52:21] [ INFO ] [HospitalDBTest:&L] try to update patient data init
+[2022-03-14 00:52:21] [ ERROR] [HospitalDBTest:&L] update patient data: ERROR, Parametro "#2" no está fijado
+Parameter "#2" is not set; SQL statement:
+UPDATE PATIENT SET PASS=? WHERE DNI = ? [90012-210]
+[2022-03-14 00:52:21] [ INFO ] [HospitalDBTest:&L] rollback to previous state
+[2022-03-14 00:52:21] [ INFO ] [HospitalDBTest:&L] CONNECTION NON CREATED, NO ROLLBACK 
+[2022-03-14 00:52:22] [ INFO ] [HospitalDBTest:&L] connection closed
+[2022-03-14 00:53:01] [ INFO ] [HospitalDBTest:&L] try to set patient data init
+[2022-03-14 00:53:01] [ INFO ] [HospitalDBTest:&L] set patient data: SUCCESS
+[2022-03-14 00:53:01] [ INFO ] [HospitalDBTest:&L] try to update patient data init
+[2022-03-14 00:53:01] [ ERROR] [HospitalDBTest:&L] update patient data: ERROR, Parametro "#2" no está fijado
+Parameter "#2" is not set; SQL statement:
+UPDATE PATIENT SET PASS=? WHERE DNI = ? [90012-210]
+[2022-03-14 00:53:01] [ INFO ] [HospitalDBTest:&L] rollback to previous state
+[2022-03-14 00:53:01] [ INFO ] [HospitalDBTest:&L] connection closed

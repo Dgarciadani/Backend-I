@@ -57,28 +57,28 @@ public class BusinessDB {
                 state.execute(initDB);
                 logger.info("init DB: SUCCESS");
             } catch (Exception e) {
-                logger.error("init DB ERROR:" + e);
+                logger.error("init DB ERROR:" + e.getMessage());
             }
             try {
                 logger.info("try to insert employee1 data");
                 state.execute(insertValues1);
                 logger.info("try to insert employee1 data: SUCCESS ");
             } catch (Exception e) {
-                logger.error("insert data employee1 ERROR:" + e);
+                logger.error("insert data employee1 ERROR:" + e.getMessage());
             }
             try {
                 logger.info("try to insert employee2 data");
                 state.execute(insertValues2);
                 logger.info("try to insert employee1 data: SUCCESS ");
             } catch (Exception e) {
-                logger.error("insert data employee2 ERROR:" + e);
+                logger.error("insert data employee2 ERROR:" + e.getMessage());
             }
             try {
                 logger.info("try to insert employee3 data");
                 state.execute(insertValues3);
                 logger.info("try to insert employee1 data: SUCCESS ");
             } catch (Exception e) {
-                logger.error("insert data employee3 ERROR:" + e);
+                logger.error("insert data employee3 ERROR:" + e.getMessage());
             }
             try {
                 logger.info("Show Table Data init");
@@ -88,7 +88,7 @@ public class BusinessDB {
                 }
                 logger.debug(rs);
             } catch (Exception e) {
-                logger.error("Show Table Data: ERROR" + e);
+                logger.error("Show Table Data: ERROR" + e.getMessage());
             }
             try {
                 logger.info("update data employee started");
@@ -105,7 +105,7 @@ public class BusinessDB {
                 }
                 logger.debug(rs);
             } catch (Exception e) {
-                logger.error("Show Table Data: ERROR" + e);
+                logger.error("Show Table Data: ERROR" + e.getMessage());
             }
             try {
                 logger.info("Delete employee by ID init");
@@ -121,12 +121,10 @@ public class BusinessDB {
                 state.execute(deleteEmployee2);
                 logger.info("Delete employee by Name: SUCCESS");
             } catch (Exception e) {
-                logger.error("Delete employee by Name: ERROR" + e);
+                logger.error("Delete employee by Name: ERROR" + e.getMessage());
             }
-
-
         } catch (Exception e) {
-            logger.error("Set connection ERROR: " + e);
+            logger.error("Set connection ERROR: " + e.getMessage());
         } finally {
             conn.close();
             logger.info("Connection closed");
