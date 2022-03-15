@@ -13,7 +13,7 @@ public class main {
         plane1.setStartDate("22/01/2022");
         plane1.setId(1L);
 
-        //SET PlaneService
+        //SET PlaneServiceDAO
         PlaneService services = new PlaneService();
         services.setPlaneDao(new PlaneDaoH2());
 

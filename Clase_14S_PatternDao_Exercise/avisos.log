@@ -1,0 +1,12 @@
+[2022-03-15 13:46:25] [ ERROR] [DaoMedicineH2:&L] INSERT medicine values: ERROR,Table "PLANES" not found (this database is empty); SQL statement:
+INSERT INTO PLANES VALUES(?,?,?,?) [42104-210]
+[2022-03-15 13:49:18] [ ERROR] [DaoMedicineH2:&L] INSERT medicine values: ERROR,La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-15 13:49:26] [ INFO ] [DaoMedicineH2:&L] INSERT medicine values: SUCCESS
+[2022-03-15 13:51:35] [ INFO ] [DaoMedicineH2:&L] INSERT medicine values: SUCCESS
+[2022-03-15 13:51:35] [ DEBUG] [DaoMedicineH2:&L] entities.Medicines@35047d03
+[2022-03-15 13:51:35] [ INFO ] [DaoMedicineH2:&L] DELETE medicine: SUCCESS
+[2022-03-15 13:55:50] [ INFO ] [DaoMedicineH2:&L] INSERT medicine values: SUCCESS
+[2022-03-15 13:55:50] [ DEBUG] [DaoMedicineH2:&L] entities.Medicines@35047d03
+[2022-03-15 13:55:50] [ DEBUG] [DaoMedicineH2:&L] entities.Medicines@769f71a9
+[2022-03-15 13:55:50] [ INFO ] [DaoMedicineH2:&L] DELETE medicine: SUCCESS
