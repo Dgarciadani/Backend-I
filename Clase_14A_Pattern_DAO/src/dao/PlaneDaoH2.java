@@ -85,6 +85,7 @@ public class PlaneDaoH2 implements IDao<Plane> {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        System.out.println(plane.getId());
         return plane;
     }
 

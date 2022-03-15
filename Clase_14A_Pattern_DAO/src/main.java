@@ -19,5 +19,16 @@ public class main {
 
         //Save plane
         services.registerPlane(plane1);
+
+        //Find plane
+        services.searchPlane(1L);
+
+        //Find ALl
+        services.ListAllPlanes();
+
+        //Delete plane
+        services.deletePlane(1L);
+
+
     }
 }
