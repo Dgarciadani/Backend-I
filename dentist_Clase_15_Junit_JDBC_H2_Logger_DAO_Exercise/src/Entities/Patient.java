@@ -18,6 +18,14 @@ public class Patient {
         this.address = address;
     }
 
+    public Patient(int id, String name, String lastname, int DNI, Date dateInit, Address address) {
+        this.id = id;
+        this.name = name;
+        this.lastname = lastname;
+        this.DNI = DNI;
+        DateInit = dateInit;
+        this.address = address;
+    }
 
     public int getId() {
         return id;

@@ -49,7 +49,28 @@ public class AddressDaoH2 implements IDao<Address> {
 
     @Override
     public Address search(int id) {
-        return null;
+        Address address1 = null;
+        Connection conn = null;
+        PreparedStatement prepareStatement = null;
+        String SQL_SELECT = "SELECT * FROM ADDRESS WHERE ID=?";
+
+        try {
+            logger.info("Search Address init");
+            conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+            prepareStatement = conn.prepareStatement(SQL_SELECT);
+            prepareStatement.setInt(1, id);
+            ResultSet rs = prepareStatement.executeQuery();
+            while (rs.next()) {
+                address1 = new Address(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5));
+            }
+            prepareStatement.close();
+            logger.info("Search Address: SUCCESS");
+
+        } catch (Exception e) {
+            logger.error("Search Address: ERROR, " + e.getMessage());
+        }
+
+        return address1;
     }
 
     @Override

@@ -14,6 +14,14 @@ public class Address {
         this.state = state;
     }
 
+    public Address(int id, String street, int door, String locality, String state) {
+        this.id = id;
+        this.street = street;
+        this.door = door;
+        this.locality = locality;
+        this.state = state;
+    }
+
     public int getId() {
         return id;
     }

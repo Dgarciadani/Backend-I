@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PatientServiceTest {
     private static PatientService patientService = new PatientService(new PatientDaoH2());
 
-    @BeforeClass
+    @Test
     public void setEntitiesEx() {
         Address address0 = new Address("calle falsa", 123, "Springfield", "Oregon");
         Patient patient0 = new Patient("Marco", "Aurelio", 40814957, new Date(), address0);
@@ -32,6 +32,12 @@ public class PatientServiceTest {
         Patient patient = new Patient("Grego", "Garcia", 23498430, new Date(), address);
 
         Assert.assertNotNull(patientService.register(patient));
+    }
+    @Test
+    public void searchPatient() {
+        Patient patient = patientService.search(1);
+        System.out.println(patient);
+        Assert.assertNotNull(patient);
     }
 
 
