@@ -10,7 +10,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 import Util.Date;
-import Util.Date.*;
 import org.apache.log4j.Logger;
 
 import static java.sql.Statement.RETURN_GENERATED_KEYS;
@@ -67,8 +66,6 @@ public class PatientDaoH2 implements IDao<Patient> {
             logger.error("Register Patient: ERROR, " + e.getMessage());
         }
         return patient;
-
-
     }
 
     @Override
@@ -101,6 +98,21 @@ public class PatientDaoH2 implements IDao<Patient> {
 
     @Override
     public void delete(int id) {
+        Connection conn = null;
+        PreparedStatement prepareStatement = null;
+        String SQL_DELETE = "DELETE FROM PATIENTS WHERE ID=?";
+
+        try {
+            logger.info("Delete Patient init");
+            conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+            prepareStatement = conn.prepareStatement(SQL_DELETE);
+            prepareStatement.setInt(1, id);
+            addressDaoH2.delete(addressDaoH2.search(id).getId());
+            prepareStatement.executeUpdate();
+            logger.info("Delete Patient: SUCCESS");
+        } catch (Exception e) {
+            logger.error("Delete Patient: ERROR, " + e.getMessage());
+        }
 
     }
 

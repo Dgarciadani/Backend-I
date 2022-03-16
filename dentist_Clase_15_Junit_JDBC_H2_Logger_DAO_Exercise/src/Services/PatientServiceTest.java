@@ -31,13 +31,19 @@ public class PatientServiceTest {
         Address address = new Address("Av.Nuñez", 4738, "Cordoba", "CBA");
         Patient patient = new Patient("Grego", "Garcia", 23498430, new Date(), address);
 
-        Assert.assertNotNull(patientService.register(patient));
+        Assert.assertNotNull(patientService.register(patient).getId());
     }
     @Test
     public void searchPatient() {
-        Patient patient = patientService.search(1);
+        Patient patient = patientService.search(2);
         System.out.println(patient);
         Assert.assertNotNull(patient);
+    }
+    @Test
+    public void deletePatient() {
+        patientService.delete(1);
+
+        Assert.assertNull(patientService.search(1));
     }
 
 

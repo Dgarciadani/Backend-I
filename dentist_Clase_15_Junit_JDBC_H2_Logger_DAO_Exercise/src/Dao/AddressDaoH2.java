@@ -75,7 +75,21 @@ public class AddressDaoH2 implements IDao<Address> {
 
     @Override
     public void delete(int id) {
+        Connection conn = null;
+        PreparedStatement prepareStatement = null;
+        String SQL_DELETE = "DELETE FROM ADDRESS WHERE ID=?";
+        try {
+            logger.info("Delete Address Init");
+            conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+            prepareStatement = conn.prepareStatement(SQL_DELETE);
+            prepareStatement.setInt(1,id);
+            prepareStatement.executeUpdate();
+            prepareStatement.close();
+            logger.info("Delete Address: SUCCESS");
 
+        }catch (Exception e){
+            logger.error("Delete Address: ERROR, "+e.getMessage());
+        }
     }
 
     @Override
