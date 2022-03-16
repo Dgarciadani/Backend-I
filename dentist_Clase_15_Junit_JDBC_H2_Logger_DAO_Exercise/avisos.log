@@ -1,0 +1,42 @@
+[2022-03-16 10:16:23] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:16:23] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-16 10:16:23] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-16 10:18:41] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:18:41] [ ERROR] [PatientDaoH2:&L] Register Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-16 10:18:59] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:18:59] [ ERROR] [PatientDaoH2:&L] Register Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-16 10:19:16] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:19:16] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-16 10:19:16] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-16 10:20:26] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:20:26] [ ERROR] [PatientDaoH2:&L] Register Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-16 10:20:37] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:20:38] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-16 10:20:38] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-16 10:21:57] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:21:57] [ ERROR] [PatientDaoH2:&L] Register Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-16 10:21:57] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:21:57] [ ERROR] [PatientDaoH2:&L] Register Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-16 10:21:57] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:21:57] [ ERROR] [PatientDaoH2:&L] Register Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-16 10:22:05] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:22:05] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-16 10:22:05] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-16 10:22:05] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:22:05] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-16 10:22:05] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-16 10:22:05] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:22:05] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-16 10:22:05] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-16 10:23:29] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:23:29] [ ERROR] [PatientDaoH2:&L] Register Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-16 10:23:36] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-16 10:23:36] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-16 10:23:36] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS

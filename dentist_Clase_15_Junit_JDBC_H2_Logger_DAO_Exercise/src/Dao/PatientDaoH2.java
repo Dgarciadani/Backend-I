@@ -73,7 +73,27 @@ public class PatientDaoH2 implements IDao<Patient> {
 
     @Override
     public Patient search(int id) {
-        return null;
+        Patient patient = null;
+        Connection conn = null;
+        PreparedStatement prepareStatement = null;
+        String SQL_SELECT = "SELECT * FROM PATIENTS WHERE ID=?";
+        logger.info("Search patient init");
+
+        try{
+            conn = DriverManager.getConnection(DB_URL,DB_USER,DB_PASS);
+            prepareStatement = conn.prepareStatement(SQL_SELECT);
+            prepareStatement.setInt(1,id);
+            ResultSet rs = prepareStatement.executeQuery();
+            while (rs.next()) {
+
+            }
+
+        }catch (Exception e) {
+
+
+        }
+
+        return patient;
     }
 
     @Override

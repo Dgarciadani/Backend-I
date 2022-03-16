@@ -10,6 +10,10 @@ public class PatientService {
         return patientIdao;
     }
 
+    public PatientService(IDao<Patient> patientIdao) {
+        this.patientIdao = patientIdao;
+    }
+
     public void setPatientIdao(IDao<Patient> patientIdao) {
         this.patientIdao = patientIdao;
     }
