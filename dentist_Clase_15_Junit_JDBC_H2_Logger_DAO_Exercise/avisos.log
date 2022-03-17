@@ -418,3 +418,124 @@ Table "PATIENT" not found; SQL statement:
 [2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Address init
 [2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
 [2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search All Patients: SUCCESS
+[2022-03-17 11:09:17] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Delete Patient init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Delete Address Init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Delete Address: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Delete Patient: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Patient init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Patient: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Update Patient Init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Update Address Init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Update Address: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Update Patient: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Patient init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Patient: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:09:18] [ INFO ] [PatientDaoH2:&L] Search All Patients: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Delete Patient init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Delete Address Init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Delete Address: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Delete Patient: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Patient init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Patient: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Update Patient Init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Update Address Init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Update Address: SUCCESS
+[2022-03-17 11:10:02] [ ERROR] [PatientDaoH2:&L] Update Patient: ERROR, Parametro "#2" no está fijado
+Parameter "#2" is not set; SQL statement:
+UPDATE PATIENTS SET name=?,lastname=?,dni=?,DateInit=?,address_id=? WHERE ID=? [90012-210]
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Patient init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Patient: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:10:02] [ INFO ] [PatientDaoH2:&L] Search All Patients: SUCCESS
+[2022-03-17 11:11:47] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 11:11:47] [ ERROR] [PatientDaoH2:&L] Register Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-17 11:11:47] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 11:11:47] [ ERROR] [PatientDaoH2:&L] Register Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-17 11:11:47] [ INFO ] [PatientDaoH2:&L] Delete Patient init
+[2022-03-17 11:11:47] [ ERROR] [PatientDaoH2:&L] Delete Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-17 11:11:47] [ INFO ] [PatientDaoH2:&L] Search Patient init
+[2022-03-17 11:11:47] [ ERROR] [PatientDaoH2:&L] Search Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-17 11:11:47] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 11:11:47] [ ERROR] [PatientDaoH2:&L] Register Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-17 11:11:47] [ INFO ] [PatientDaoH2:&L] Update Patient Init
+[2022-03-17 11:11:47] [ ERROR] [PatientDaoH2:&L] Update Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-17 11:11:47] [ INFO ] [PatientDaoH2:&L] Search Patient init
+[2022-03-17 11:11:47] [ ERROR] [PatientDaoH2:&L] Search Patient: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-17 11:11:47] [ ERROR] [PatientDaoH2:&L] Search All Patients: ERROR, La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Delete Patient init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Delete Address Init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Delete Address: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Delete Patient: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Patient init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Patient: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Update Patient Init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Update Address Init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Update Address: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Update Patient: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Patient init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Patient: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 11:12:20] [ INFO ] [PatientDaoH2:&L] Search All Patients: SUCCESS

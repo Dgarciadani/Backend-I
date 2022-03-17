@@ -1,0 +1,301 @@
+[2022-03-17 14:55:17] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 14:55:17] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:55:17] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:55:17] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:55:17] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:55:17] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:55:17] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:55:17] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:55:41] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 14:55:42] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:55:42] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:55:42] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:55:42] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:55:42] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:55:42] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:55:42] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:56:18] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 14:56:18] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:56:18] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:56:18] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:56:18] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:56:19] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:56:19] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:56:19] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:56:28] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 14:56:28] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:56:28] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:56:28] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:56:28] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:56:28] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:56:28] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:56:28] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:01] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 14:58:02] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:02] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:58:02] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:02] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:58:02] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:02] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:58:02] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:16] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 14:58:16] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:16] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:58:16] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:16] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:58:16] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:16] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:58:16] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:42] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 14:58:42] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:42] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:58:42] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:42] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:58:42] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:42] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:58:42] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:48] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 14:58:49] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:49] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:58:49] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:49] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:58:49] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:58:49] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:58:49] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-210]
+[2022-03-17 14:59:17] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 14:59:17] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: ./create.sql"; "./create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: ./create.sql"; "./create.sql"; SQL statement:
+RUNSCRIPT FROM './create.sql' [90031-210]
+[2022-03-17 14:59:17] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:59:17] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: ./create.sql"; "./create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: ./create.sql"; "./create.sql"; SQL statement:
+RUNSCRIPT FROM './create.sql' [90031-210]
+[2022-03-17 14:59:17] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:59:17] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: ./create.sql"; "./create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: ./create.sql"; "./create.sql"; SQL statement:
+RUNSCRIPT FROM './create.sql' [90031-210]
+[2022-03-17 14:59:17] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 14:59:17] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, IO Exception: "java.nio.file.NoSuchFileException: ./create.sql"; "./create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: ./create.sql"; "./create.sql"; SQL statement:
+RUNSCRIPT FROM './create.sql' [90031-210]
+[2022-03-17 15:00:15] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:00:15] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:00:15] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:00:15] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:00:15] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:00:15] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:00:15] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:00:15] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:02:02] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:02:02] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:02:02] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, Cannot invoke "Models.Dentist.getName()" because "dentist1" is null
+[2022-03-17 15:02:02] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:02:02] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:02:02] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:02:02] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:02:02] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:02:02] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:03:24] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:03:24] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:03:24] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, Cannot invoke "Models.Dentist.getName()" because "dentist1" is null
+[2022-03-17 15:03:24] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:03:24] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:03:24] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:03:24] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:03:24] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:03:24] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:04:41] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:04:41] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, No hay datos disponibles.
+No data is available [2000-210]
+[2022-03-17 15:04:41] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:04:41] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:04:41] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:04:41] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:04:41] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:04:41] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:05:32] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:05:32] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, No hay datos disponibles.
+No data is available [2000-210]
+[2022-03-17 15:05:32] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:05:32] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:05:32] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:05:32] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:05:32] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:05:32] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:09:51] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:09:51] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:09:51] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:09:51] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:09:51] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:09:51] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:09:56] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:09:56] [ INFO ] [DentistDaoH2:&L] select conn set ready
+[2022-03-17 15:09:56] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, No hay datos disponibles.
+No data is available [2000-210]
+[2022-03-17 15:11:25] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:11:25] [ INFO ] [DentistDaoH2:&L] select conn set ready
+[2022-03-17 15:11:25] [ INFO ] [DentistDaoH2:&L] ejecutado
+[2022-03-17 15:11:25] [ ERROR] [DentistDaoH2:&L] Select Dentist: ERROR, No hay datos disponibles.
+No data is available [2000-210]
+[2022-03-17 15:12:33] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:12:33] [ INFO ] [DentistDaoH2:&L] select conn set ready
+[2022-03-17 15:12:33] [ INFO ] [DentistDaoH2:&L] ejecutado
+[2022-03-17 15:12:33] [ INFO ] [DentistDaoH2:&L] in while
+[2022-03-17 15:12:33] [ INFO ] [DentistDaoH2:&L] out while
+[2022-03-17 15:12:33] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:12:33] [ DEBUG] [DentistDaoH2:&L] Pedro
+[2022-03-17 15:13:22] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:13:22] [ INFO ] [DentistDaoH2:&L] select conn set ready
+[2022-03-17 15:13:22] [ INFO ] [DentistDaoH2:&L] ejecutado
+[2022-03-17 15:13:22] [ INFO ] [DentistDaoH2:&L] in while
+[2022-03-17 15:13:22] [ INFO ] [DentistDaoH2:&L] out while
+[2022-03-17 15:13:22] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:13:22] [ DEBUG] [DentistDaoH2:&L] Pedro
+[2022-03-17 15:13:48] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:13:48] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:15:39] [ ERROR] [DentistDaoH2:&L] Delete Dentist Init
+[2022-03-17 15:15:39] [ INFO ] [DentistDaoH2:&L] Delete Dentist: SUCCESS
+[2022-03-17 15:15:39] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:15:39] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:18:11] [ INFO ] [DentistDaoH2:&L] Select All Dentists Init
+[2022-03-17 15:18:11] [ INFO ] [DentistDaoH2:&L] Select All Dentists: SUCCESS
+[2022-03-17 15:18:51] [ INFO ] [DentistDaoH2:&L] Select All Dentists Init
+[2022-03-17 15:18:51] [ INFO ] [DentistDaoH2:&L] Select All Dentists: SUCCESS
+[2022-03-17 15:19:13] [ ERROR] [DentistDaoH2:&L] Delete Dentist Init
+[2022-03-17 15:19:13] [ INFO ] [DentistDaoH2:&L] Delete Dentist: SUCCESS
+[2022-03-17 15:19:13] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:19:13] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:19:13] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:19:13] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:19:13] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:19:13] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:19:13] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:19:13] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:19:13] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:19:13] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:19:13] [ INFO ] [DentistDaoH2:&L] Select All Dentists Init
+[2022-03-17 15:19:13] [ INFO ] [DentistDaoH2:&L] Select All Dentists: SUCCESS
+[2022-03-17 15:20:13] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:20:13] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:20:13] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:20:13] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:20:13] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:20:13] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:20:13] [ ERROR] [DentistDaoH2:&L] Delete Dentist Init
+[2022-03-17 15:20:13] [ INFO ] [DentistDaoH2:&L] Delete Dentist: SUCCESS
+[2022-03-17 15:20:13] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:20:13] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:20:13] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:20:13] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:20:13] [ INFO ] [DentistDaoH2:&L] Select All Dentists Init
+[2022-03-17 15:20:13] [ INFO ] [DentistDaoH2:&L] Select All Dentists: SUCCESS
+[2022-03-17 15:21:19] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:21:19] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:21:19] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:21:19] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:21:19] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:21:19] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:21:19] [ ERROR] [DentistDaoH2:&L] Delete Dentist Init
+[2022-03-17 15:21:19] [ INFO ] [DentistDaoH2:&L] Delete Dentist: SUCCESS
+[2022-03-17 15:21:19] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:21:19] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:21:19] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:21:19] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:21:19] [ INFO ] [DentistDaoH2:&L] Select All Dentists Init
+[2022-03-17 15:21:19] [ INFO ] [DentistDaoH2:&L] Select All Dentists: SUCCESS
+[2022-03-17 15:22:39] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:22:39] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, Violación de indice de Unicidad ó Clave primaria: "PRIMARY KEY ON PUBLIC.DENTISTS(LICENCE_ID) ( /* key:0 */ CAST(1 AS BIGINT), 'Juan', 'Carlos')"
+Unique index or primary key violation: "PRIMARY KEY ON PUBLIC.DENTISTS(LICENCE_ID) ( /* key:0 */ CAST(1 AS BIGINT), 'Juan', 'Carlos')"; SQL statement:
+INSERT INTO DENTISTS VALUES(?,?,?) [23505-210]
+[2022-03-17 15:22:39] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:22:39] [ ERROR] [DentistDaoH2:&L] Register Dentist: ERROR, Violación de indice de Unicidad ó Clave primaria: "PRIMARY KEY ON PUBLIC.DENTISTS(LICENCE_ID) ( /* key:0 */ CAST(2 AS BIGINT), 'Pedro', 'Lopez')"
+Unique index or primary key violation: "PRIMARY KEY ON PUBLIC.DENTISTS(LICENCE_ID) ( /* key:0 */ CAST(2 AS BIGINT), 'Pedro', 'Lopez')"; SQL statement:
+INSERT INTO DENTISTS VALUES(?,?,?) [23505-210]
+[2022-03-17 15:22:39] [ ERROR] [DentistDaoH2:&L] Delete Dentist Init
+[2022-03-17 15:22:39] [ INFO ] [DentistDaoH2:&L] Delete Dentist: SUCCESS
+[2022-03-17 15:22:39] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:22:39] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:22:39] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:22:39] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:22:39] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:22:39] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:22:39] [ INFO ] [DentistDaoH2:&L] Select All Dentists Init
+[2022-03-17 15:22:39] [ INFO ] [DentistDaoH2:&L] Select All Dentists: SUCCESS
+[2022-03-17 15:22:58] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:22:58] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:22:58] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:22:58] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:22:58] [ ERROR] [DentistDaoH2:&L] Delete Dentist Init
+[2022-03-17 15:22:58] [ INFO ] [DentistDaoH2:&L] Delete Dentist: SUCCESS
+[2022-03-17 15:22:58] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:22:58] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:22:58] [ INFO ] [DentistDaoH2:&L] Select Dentist init
+[2022-03-17 15:22:58] [ INFO ] [DentistDaoH2:&L] Select Dentist: SUCCESS
+[2022-03-17 15:22:58] [ INFO ] [DentistDaoH2:&L] Register Dentist init
+[2022-03-17 15:22:58] [ INFO ] [DentistDaoH2:&L] Register Dentist: SUCCESS
+[2022-03-17 15:22:58] [ INFO ] [DentistDaoH2:&L] Select All Dentists Init
+[2022-03-17 15:22:58] [ INFO ] [DentistDaoH2:&L] Select All Dentists: SUCCESS
