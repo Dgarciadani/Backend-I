@@ -8,7 +8,7 @@ public class Date {
         return sqlDate;
 
     }
-//tutor Ex
+//tutor Example
    /* public static java.sql.Date utilDateToSqlDate(java.util.Date utilDate){
         long timeInMilliSeconds = utilDate.getTime();
         java.sql.Date sqlDate = new java.sql.Date(timeInMilliSeconds);

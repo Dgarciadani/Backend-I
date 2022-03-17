@@ -1,5 +1,7 @@
 package Dao;
 
+import java.util.List;
+
 public interface IDao<T> {
 
     public T register(T t);
@@ -8,7 +10,9 @@ public interface IDao<T> {
 
     public void delete(int id);
 
-    public T update(int i, Object o);
+    public T update(int id, T t);
+
+    public List<T> searchAll();
 
 
 }

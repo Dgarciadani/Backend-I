@@ -3,6 +3,8 @@ package Services;
 import Dao.IDao;
 import Entities.Patient;
 
+import java.util.List;
+
 public class PatientService {
     private IDao<Patient> patientIdao;
 
@@ -30,9 +32,12 @@ public class PatientService {
         patientIdao.delete(i);
     }
 
-    public Patient update(int i, Object o) {
-        return patientIdao.update(i, o);
+    public Patient update(int i, Patient patient) {
+        return patientIdao.update(i, patient);
 
+    }
+    public List<Patient> searchAll(){
+        return patientIdao.searchAll();
     }
 
 }

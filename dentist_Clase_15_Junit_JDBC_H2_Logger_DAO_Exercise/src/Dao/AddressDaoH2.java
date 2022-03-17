@@ -1,9 +1,12 @@
 package Dao;
 
 import Entities.Address;
+import Entities.Patient;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AddressDaoH2 implements IDao<Address> {
 
@@ -82,18 +85,66 @@ public class AddressDaoH2 implements IDao<Address> {
             logger.info("Delete Address Init");
             conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
             prepareStatement = conn.prepareStatement(SQL_DELETE);
-            prepareStatement.setInt(1,id);
+            prepareStatement.setInt(1, id);
             prepareStatement.executeUpdate();
             prepareStatement.close();
             logger.info("Delete Address: SUCCESS");
 
-        }catch (Exception e){
-            logger.error("Delete Address: ERROR, "+e.getMessage());
+        } catch (Exception e) {
+            logger.error("Delete Address: ERROR, " + e.getMessage());
         }
     }
 
     @Override
-    public Address update(int i, Object o) {
-        return null;
+    public Address update(int id, Address address) {
+        Connection conn = null;
+        PreparedStatement prepareStatement = null;
+        String SQL_UPDATE = "UPDATE ADDRESS SET street=?,door=?,locality=?,state=? WHERE ID=?";
+        Address address1 = null;
+        try {
+            logger.info("Update Address Init");
+            conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+            prepareStatement = conn.prepareStatement(SQL_UPDATE);
+            prepareStatement.setInt(5, id);
+            prepareStatement.setString(1, address.getStreet());
+            prepareStatement.setInt(2, address.getDoor());
+            prepareStatement.setString(3, address.getLocality());
+            prepareStatement.setString(4, address.getState());
+
+            prepareStatement.executeUpdate();
+            prepareStatement.close();
+            address1 = address;
+            logger.info("Update Address: SUCCESS");
+
+        } catch (Exception e) {
+            logger.error("Update Address: ERROR, " + e.getMessage());
+        }
+        return address1;
     }
+
+    @Override
+    public List<Address> searchAll() {
+        List<Address> allAddress = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement prepareStatement = null;
+        String SQL_SELECT_ALL = " SELECT * FROM ADDRESS";
+        try {
+            conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+            prepareStatement = conn.prepareStatement(SQL_SELECT_ALL);
+            ResultSet rs = prepareStatement.executeQuery();
+            while (rs.next()) {
+                Address address = new Address(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5));
+                allAddress.add(address);
+            }
+            prepareStatement.close();
+            logger.info("Search All Address: SUCCESS");
+
+        } catch (Exception e) {
+            logger.error("Search All Address: ERROR, " + e.getMessage());
+        }
+
+        return allAddress;
+    }
+
+
 }
