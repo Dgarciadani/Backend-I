@@ -1,7 +1,6 @@
 package Dao;
 
-import Entities.Address;
-import Entities.Patient;
+import Models.Address;
 import org.apache.log4j.Logger;
 
 import java.sql.*;

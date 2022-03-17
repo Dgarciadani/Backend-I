@@ -106,7 +106,7 @@ Data conversion error converting "Aurelio" [22018-210]
 [2022-03-16 15:00:00] [ INFO ] [PatientDaoH2:&L] Delete Patient init
 [2022-03-16 15:00:00] [ INFO ] [PatientDaoH2:&L] Search Address init
 [2022-03-16 15:00:00] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
-[2022-03-16 15:00:00] [ ERROR] [PatientDaoH2:&L] Delete Patient: ERROR, Cannot invoke "Entities.Address.getId()" because the return value of "Dao.AddressDaoH2.search(int)" is null
+[2022-03-16 15:00:00] [ ERROR] [PatientDaoH2:&L] Delete Patient: ERROR, Cannot invoke "Models.Address.getId()" because the return value of "Dao.AddressDaoH2.search(int)" is null
 [2022-03-16 15:00:00] [ INFO ] [PatientDaoH2:&L] Search Patient init
 [2022-03-16 15:00:00] [ INFO ] [PatientDaoH2:&L] Search Patient: SUCCESS
 [2022-03-16 15:00:00] [ INFO ] [PatientDaoH2:&L] Register patient init
@@ -145,7 +145,7 @@ Data conversion error converting "Aurelio" [22018-210]
 [2022-03-16 15:01:16] [ INFO ] [PatientDaoH2:&L] Delete Patient init
 [2022-03-16 15:01:16] [ INFO ] [PatientDaoH2:&L] Search Address init
 [2022-03-16 15:01:16] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
-[2022-03-16 15:01:16] [ ERROR] [PatientDaoH2:&L] Delete Patient: ERROR, Cannot invoke "Entities.Address.getId()" because the return value of "Dao.AddressDaoH2.search(int)" is null
+[2022-03-16 15:01:16] [ ERROR] [PatientDaoH2:&L] Delete Patient: ERROR, Cannot invoke "Models.Address.getId()" because the return value of "Dao.AddressDaoH2.search(int)" is null
 [2022-03-16 15:01:16] [ INFO ] [PatientDaoH2:&L] Search Patient init
 [2022-03-16 15:01:16] [ INFO ] [PatientDaoH2:&L] Search Patient: SUCCESS
 [2022-03-16 15:01:16] [ INFO ] [PatientDaoH2:&L] Register patient init
@@ -164,7 +164,7 @@ Data conversion error converting "Aurelio" [22018-210]
 [2022-03-16 15:01:45] [ INFO ] [PatientDaoH2:&L] Delete Patient init
 [2022-03-16 15:01:45] [ INFO ] [PatientDaoH2:&L] Search Address init
 [2022-03-16 15:01:45] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
-[2022-03-16 15:01:45] [ ERROR] [PatientDaoH2:&L] Delete Patient: ERROR, Cannot invoke "Entities.Address.getId()" because the return value of "Dao.AddressDaoH2.search(int)" is null
+[2022-03-16 15:01:45] [ ERROR] [PatientDaoH2:&L] Delete Patient: ERROR, Cannot invoke "Models.Address.getId()" because the return value of "Dao.AddressDaoH2.search(int)" is null
 [2022-03-16 15:01:45] [ INFO ] [PatientDaoH2:&L] Search Patient init
 [2022-03-16 15:01:45] [ INFO ] [PatientDaoH2:&L] Search Patient: SUCCESS
 [2022-03-16 15:01:45] [ INFO ] [PatientDaoH2:&L] Register patient init
@@ -312,7 +312,7 @@ Table "PATIENT" not found; SQL statement:
 [2022-03-17 00:55:48] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
 [2022-03-17 00:55:48] [ INFO ] [PatientDaoH2:&L] Update Address Init
 [2022-03-17 00:55:48] [ INFO ] [PatientDaoH2:&L] Update Address: SUCCESS
-[2022-03-17 00:55:48] [ ERROR] [PatientDaoH2:&L] Update Patient: ERROR, Cannot invoke "Entities.Address.getId()" because "address" is null
+[2022-03-17 00:55:48] [ ERROR] [PatientDaoH2:&L] Update Patient: ERROR, Cannot invoke "Models.Address.getId()" because "address" is null
 [2022-03-17 00:55:48] [ INFO ] [PatientDaoH2:&L] Search Patient init
 [2022-03-17 00:55:48] [ INFO ] [PatientDaoH2:&L] Search Address init
 [2022-03-17 00:55:48] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
@@ -386,3 +386,35 @@ Table "PATIENT" not found; SQL statement:
 [2022-03-17 01:05:46] [ INFO ] [PatientDaoH2:&L] Search Address init
 [2022-03-17 01:05:46] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
 [2022-03-17 01:05:46] [ INFO ] [PatientDaoH2:&L] Search All Patients: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Delete Patient init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Delete Address Init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Delete Address: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Delete Patient: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Patient init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Patient: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Register patient init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Register Address: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Register Patient: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Update Patient Init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Update Address Init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Update Address: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Update Patient: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Patient init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Patient: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Address init
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search Address: SUCCESS
+[2022-03-17 10:42:14] [ INFO ] [PatientDaoH2:&L] Search All Patients: SUCCESS

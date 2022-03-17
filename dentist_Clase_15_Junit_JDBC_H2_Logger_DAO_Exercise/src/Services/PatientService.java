@@ -1,7 +1,7 @@
 package Services;
 
 import Dao.IDao;
-import Entities.Patient;
+import Models.Patient;
 
 import java.util.List;
 

@@ -1,18 +1,13 @@
 package Services;
 
 import Dao.PatientDaoH2;
-import Entities.Address;
-import Entities.Patient;
-import org.junit.After;
+import Models.Address;
+import Models.Patient;
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class PatientServiceTest {
     private static PatientService patientService = new PatientService(new PatientDaoH2());

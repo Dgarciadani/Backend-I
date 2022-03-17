@@ -1,7 +1,7 @@
 package Dao;
 
-import Entities.Address;
-import Entities.Patient;
+import Models.Address;
+import Models.Patient;
 
 import java.sql.*;
 
@@ -13,8 +13,6 @@ import java.util.List;
 
 import Util.Date;
 import org.apache.log4j.Logger;
-
-import static java.sql.Statement.RETURN_GENERATED_KEYS;
 
 public class PatientDaoH2 implements IDao<Patient> {
     private static final Logger logger = Logger.getLogger(PatientDaoH2.class);

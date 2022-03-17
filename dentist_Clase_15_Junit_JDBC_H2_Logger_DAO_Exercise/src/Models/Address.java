@@ -1,4 +1,4 @@
-package Entities;
+package Models;
 
 public class Address {
     private int id;
