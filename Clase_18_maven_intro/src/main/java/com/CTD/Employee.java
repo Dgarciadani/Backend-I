@@ -55,4 +55,15 @@ public class Employee {
     public void setFehcaInicio(String fehcaInicio) {
         this.fehcaInicio = fehcaInicio;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", edad=" + edad +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", fehcaInicio='" + fehcaInicio + '\'' +
+                '}';
+    }
 }

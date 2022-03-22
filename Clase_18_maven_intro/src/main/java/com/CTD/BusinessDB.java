@@ -32,7 +32,7 @@ public class BusinessDB {
                 "AGE INT NOT NULL," +
                 " NAME  VARCHAR(255) NOT NULL, " +
                 "LASTNAME VARCHAR(255) NOT NULL," +
-                "FEHCA_INICIO VARCHAR(255) NOT NULL);";
+                "FEHCAINICIO VARCHAR(255) NOT NULL);";
 
         String insertValues1 =
                 "INSERT INTO EMPRESA VALUES(" + employee1.getId() + ", " + employee1.getEdad() + " , '" + employee1.getName() + "', ' " + employee1.getLastName() + " ', '" + employee1.getFehcaInicio() + "');";
@@ -132,7 +132,7 @@ public class BusinessDB {
             logger.info("Connection closed");
         }
 
-
+//OLD P
        /* try {
             logger.info(" init DB");
             state.execute(initDB);
