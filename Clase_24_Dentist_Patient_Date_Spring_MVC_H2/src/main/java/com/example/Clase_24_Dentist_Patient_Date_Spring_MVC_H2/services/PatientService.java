@@ -33,6 +33,10 @@ public class PatientService {
      }
      public List<Patient> searchAll(){
         return patientIdao.searchAll();
+
+
+
+
      }
 
 }

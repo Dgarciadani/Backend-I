@@ -1,11 +1,11 @@
 package com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.idao.impl;
 
-import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.domain.Patient;
+import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.domain.Address;
 import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.idao.Idao;
 
 import java.util.List;
 
-public class PatientDaoH2 implements Idao<Patient> {
+public class AddressDaoH2 implements Idao<Address> {
 
 
     private static final String DB_JDBC_DRIVER = "org.h2.Driver";
@@ -13,19 +13,18 @@ public class PatientDaoH2 implements Idao<Patient> {
     private static final String DB_USER = "sa";
     private static final String DB_PASS = "";
 
-
     @Override
-    public Patient register(Patient patient) {
+    public Address register(Address address) {
         return null;
     }
 
     @Override
-    public Patient search(int id) {
+    public Address search(int id) {
         return null;
     }
 
     @Override
-    public Patient update(int id, Patient patient) {
+    public Address update(int id, Address address) {
         return null;
     }
 
@@ -35,7 +34,7 @@ public class PatientDaoH2 implements Idao<Patient> {
     }
 
     @Override
-    public List<Patient> searchAll() {
+    public List<Address> searchAll() {
         return null;
     }
 }

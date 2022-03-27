@@ -7,11 +7,11 @@ public class Patient {
     private int patient_id;
     private String name;
     private String lastName;
-    private String address;
+    private Address address;
     private int dni;
     private Date dateInit;
 
-    public Patient(int patient_id, String name, String lastName, String address, int dni, Date dateInit) {
+    public Patient(int patient_id, String name, String lastName, Address address, int dni, Date dateInit) {
         this.patient_id = patient_id;
         this.name = name;
         this.lastName = lastName;
@@ -20,7 +20,7 @@ public class Patient {
         this.dateInit = dateInit;
     }
 
-    public Patient(String name, String lastName, String address, int dni, Date dateInit) {
+    public Patient(String name, String lastName, Address address, int dni, Date dateInit) {
         this.name = name;
         this.lastName = lastName;
         this.address = address;
@@ -52,11 +52,11 @@ public class Patient {
         this.lastName = lastName;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 

@@ -5,10 +5,10 @@ import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.idao.Idao;
 
 import java.util.List;
 
-public class DentisService implements Idao<Dentist> {
+public class DentistService implements Idao<Dentist> {
     private Idao<Dentist> dentistIdao;
 
-    public DentisService(Idao<Dentist> dentistIdao) {
+    public DentistService(Idao<Dentist> dentistIdao) {
         this.dentistIdao = dentistIdao;
     }
 
