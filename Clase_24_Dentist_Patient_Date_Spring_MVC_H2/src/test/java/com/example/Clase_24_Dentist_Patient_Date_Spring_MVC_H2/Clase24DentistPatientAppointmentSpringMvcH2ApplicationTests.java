@@ -15,6 +15,5 @@ class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
 		DentistService dentistService = new DentistService(new DentistDaoH2());
 		Dentist dentist = new Dentist("Pablo","Perez",32424);
 		Assertions.assertTrue(dentistService.register(dentist).getDentist_id()>=1);
-
 	}
 }
