@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class PatientDaoH2 implements Idao<Patient> {
     private static final String DB_URl = "jdbc:h2:~/test;INIT=RUNSCRIPT FROM 'create.sql'";
     private static final String DB_USER = "sa";
     private static final String DB_PASS = "";
-
+    AddressDaoH2 addressDaoH2 = new AddressDaoH2();
 
     @Override
     public Patient register(Patient patient) {
@@ -61,21 +62,99 @@ public class PatientDaoH2 implements Idao<Patient> {
 
     @Override
     public Patient search(int id) {
-        return null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        Patient patient = null;
+        String SQL_SELECT = "SELECT * FROM PATIENTS WHERE ID = ?";
+        try {
+            logger.info("Searching patient");
+            connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
+            preparedStatement = connection.prepareStatement(SQL_SELECT);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            logger.info("Patient found");
+            if (resultSet.next()) {
+                Address address = addressDaoH2.search(resultSet.getInt("ADDRESS_ID"));
+                patient = new Patient(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), address, resultSet.getInt(5), new Date(resultSet.getDate(6).getTime()));
+            }
+            preparedStatement.close();
+            connection.close();
+            logger.info("Patient searched successfully");
+        } catch (Exception e) {
+            logger.error("Search Patient Error, " + e.getMessage());
+        }
+        return patient;
     }
 
     @Override
     public Patient update(int id, Patient patient) {
-        return null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        Patient patient1 = null;
+        String SQL_UPDATE = "UPDATE PATIENTS SET NAME = ?, LASTNAME = ?, ADDRESS_ID = ?, DNI = ?, DATE_INIT = ? WHERE ID = ?";
+        try {
+            logger.info("Updating patient");
+            connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
+            preparedStatement = connection.prepareStatement(SQL_UPDATE);
+            preparedStatement.setString(1, patient.getName());
+            preparedStatement.setString(2, patient.getLastName());
+            preparedStatement.setInt(3, addressDaoH2.update(patient.getAddress().getAddressId(), patient.getAddress()).getAddressId());
+            preparedStatement.setInt(4, patient.getDni());
+            preparedStatement.setDate(5, new java.sql.Date(patient.getDateInit().getTime()));
+            preparedStatement.setInt(6, id);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+            patient1 = patient;
+            logger.info("Patient updated successfully");
+        } catch (Exception e) {
+            logger.error("Update Patient Error, " + e.getMessage());
+        }
+        return patient1;
     }
 
     @Override
     public void delete(int id) {
-
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        String SQL_DELETE = "DELETE FROM PATIENTS WHERE ID = ?";
+        try {
+            logger.info("Deleting patient");
+            connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
+            preparedStatement = connection.prepareStatement(SQL_DELETE);
+            addressDaoH2.delete(search(id).getAddress().getAddressId());
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+            logger.info("Patient deleted successfully");
+        } catch (Exception e) {
+            logger.error("Delete Patient Error, " + e.getMessage());
+        }
     }
+
 
     @Override
     public List<Patient> searchAll() {
-        return null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        List<Patient> patientsList = new ArrayList();
+        String SQL_SELECT = "SELECT * FROM PATIENTS";
+        try {
+            logger.info("Searching all patients");
+            connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
+            preparedStatement = connection.prepareStatement(SQL_SELECT);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Address address = addressDaoH2.search(resultSet.getInt("ADDRESS_ID"));
+                patientsList.add(new Patient(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), address, resultSet.getInt(5), new Date(resultSet.getDate(6).getTime())));
+            }
+            preparedStatement.close();
+            connection.close();
+            logger.info("Patients searched successfully");
+        } catch (Exception e) {
+            logger.error("Search All Patients Error, " + e.getMessage());
+        }
+        return patientsList;
     }
 }

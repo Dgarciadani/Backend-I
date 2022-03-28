@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -135,6 +136,28 @@ public class DentistDaoH2 implements Idao<Dentist> {
 
     @Override
     public List<Dentist> searchAll() {
-        return null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        String SQL_READ = "SELECT * FROM DENTISTS";
+        List<Dentist> dentistsList = new ArrayList();
+        try {
+            logger.info("Searching all dentists");
+            Class.forName(DB_JDBC_DRIVER);
+            connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
+            preparedStatement = connection.prepareStatement(SQL_READ);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Dentist dentist = new Dentist(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getInt(4));
+                dentistsList.add(dentist);
+            }
+            preparedStatement.close();
+            logger.info("Dentists List found");
+
+        } catch (Exception e) {
+            logger.error("Error searching all dentists"+ e.getMessage());
+
+        }
+        return dentistsList;
     }
 }
