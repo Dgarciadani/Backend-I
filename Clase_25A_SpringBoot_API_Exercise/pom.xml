@@ -12,7 +12,7 @@
 	<artifactId>Clase_25A_SpringBoot_API_Exercise</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Clase_25A_SpringBoot_API_Exercise</name>
-	<description>Spring boot web project based on medicines exercise, to create an API</description>
+	<description>Spring boot web project based on medicine exercise, to create an API</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

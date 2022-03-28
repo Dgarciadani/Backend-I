@@ -6,9 +6,9 @@ public interface Idao<T> {
 
     public T register(T t);
 
-    public void delete(long id);
+    public void delete(int id);
 
-    public T search(long id);
+    public T search(int id);
 
     public List<T> searchAll();
 

@@ -1,10 +1,10 @@
 package com.example.Clase_25A_SpringBoot_API_Exercise.domain;
 
-public class Medicines {
+public class Medicine {
+    private int id;
     private String name;
     private String brand;
-    private Long id;
-    private Long registryFDA;
+    private int registryFDA;
 
     public String getName() {
         return name;
@@ -22,19 +22,21 @@ public class Medicines {
         this.brand = brand;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Long getRegistryFDA() {
+    public int getRegistryFDA() {
         return registryFDA;
     }
 
-    public void setRegistryFDA(Long registryFDA) {
+    public void setRegistryFDA(int registryFDA) {
         this.registryFDA = registryFDA;
     }
+
+
 }

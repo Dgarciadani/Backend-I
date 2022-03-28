@@ -13,7 +13,7 @@ import java.util.List;
 
 
 public class DentistDaoH2 implements Idao<Dentist> {
-Logger logger = org.slf4j.LoggerFactory.getLogger(DentistDaoH2.class);
+    Logger logger = org.slf4j.LoggerFactory.getLogger(DentistDaoH2.class);
 
     private static final String DB_JDBC_DRIVER = "org.h2.Driver";
     private static final String DB_URl = "jdbc:h2:~/test;INIT=RUNSCRIPT FROM 'create.sql'";
@@ -30,7 +30,7 @@ Logger logger = org.slf4j.LoggerFactory.getLogger(DentistDaoH2.class);
 
         try {
             logger.info("Registering dentist");
-         Class.forName(DB_JDBC_DRIVER);
+            Class.forName(DB_JDBC_DRIVER);
             connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
             preparedStatement = connection.prepareStatement(SQL_CREATE, PreparedStatement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, dentist.getName());
@@ -55,16 +55,81 @@ Logger logger = org.slf4j.LoggerFactory.getLogger(DentistDaoH2.class);
 
     @Override
     public Dentist search(int id) {
-        return null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        String SQL_READ = "SELECT * FROM DENTISTS WHERE ID = ?";
+        Dentist dentist = null;
+        try {
+            logger.info("Searching dentist");
+            Class.forName(DB_JDBC_DRIVER);
+            connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
+            preparedStatement = connection.prepareStatement(SQL_READ);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                dentist = new Dentist(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getInt(4));
+
+
+            }
+            preparedStatement.close();
+            logger.info("Dentist found");
+
+        } catch (Exception e) {
+            logger.error("Error searching dentist" + e.getMessage());
+        }
+
+
+        return dentist;
     }
 
     @Override
     public Dentist update(int id, Dentist dentist) {
-        return null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        String SQL_UPDATE = "UPDATE DENTISTS SET NAME = ?, LASTNAME = ?, REGISTER = ? WHERE ID = ?";
+        try {
+            logger.info("Updating dentist");
+            Class.forName(DB_JDBC_DRIVER);
+            connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
+            preparedStatement = connection.prepareStatement(SQL_UPDATE);
+            preparedStatement.setString(1, dentist.getName());
+            preparedStatement.setString(2, dentist.getLastName());
+            preparedStatement.setInt(3, dentist.getRegister());
+            preparedStatement.setInt(4, id);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            dentist.setDentist_id(id);
+            logger.info("Dentist updated");
+
+        } catch (Exception e) {
+            logger.error("Error updating dentist, "+ e.getMessage());
+
+        }
+
+
+        return dentist;
     }
 
     @Override
     public void delete(int id) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        String SQL_DELETE = "DELETE FROM DENTISTS WHERE ID = ?";
+        try {
+            logger.info("Deleting dentist");
+            Class.forName(DB_JDBC_DRIVER);
+            connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
+            preparedStatement = connection.prepareStatement(SQL_DELETE);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            logger.info("Dentist deleted");
+
+        } catch (Exception e) {
+            logger.error("Error deleting dentist", e);
+
+        }
 
     }
 
