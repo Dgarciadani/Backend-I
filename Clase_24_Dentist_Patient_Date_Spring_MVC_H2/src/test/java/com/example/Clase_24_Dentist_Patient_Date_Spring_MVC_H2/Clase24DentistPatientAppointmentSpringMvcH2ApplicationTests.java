@@ -8,7 +8,7 @@ import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.idao.impl.Patient
 import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.services.DentistService;
 import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.services.PatientService;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
