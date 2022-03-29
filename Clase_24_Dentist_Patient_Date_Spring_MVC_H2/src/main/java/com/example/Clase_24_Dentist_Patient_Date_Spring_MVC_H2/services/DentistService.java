@@ -19,19 +19,24 @@ public class DentistService implements Idao<Dentist> {
     public void setDentistIdao(Idao<Dentist> dentistIdao) {
         this.dentistIdao = dentistIdao;
     }
-    public Dentist register(Dentist dentist){
+
+    public Dentist register(Dentist dentist) {
         return dentistIdao.register(dentist);
     }
-    public Dentist search(int id){
+
+    public Dentist search(int id) {
         return dentistIdao.search(id);
     }
-    public Dentist update(int id, Dentist dentist){
+
+    public Dentist update(int id, Dentist dentist) {
         return dentistIdao.update(id, dentist);
     }
-    public void delete(int id){
+
+    public void delete(int id) {
         dentistIdao.delete(id);
     }
-    public List<Dentist> searchAll(){
+
+    public List<Dentist> searchAll() {
         return dentistIdao.searchAll();
     }
 

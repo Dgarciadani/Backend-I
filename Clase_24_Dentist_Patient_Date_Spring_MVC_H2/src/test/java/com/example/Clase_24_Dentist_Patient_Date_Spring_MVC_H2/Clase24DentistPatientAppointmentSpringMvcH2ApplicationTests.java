@@ -23,7 +23,7 @@ import java.util.Date;
 class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
 
 
-    public static boolean beforeAll() {
+    public static boolean connTrue() {
         boolean conn = false;
         String DB_JDBC_DRIVER = "org.h2.Driver";
         String DB_URl = "jdbc:h2:~/test";
@@ -46,7 +46,7 @@ class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
     public void createDentists() {
         DentistService dentistService = new DentistService(new DentistDaoH2());
         Dentist dentist = new Dentist("Pablo", "Perez", 32424);
-        Assertions.assertTrue(dentistService.register(dentist).getDentist_id() >= 1 && beforeAll());
+        Assertions.assertTrue(dentistService.register(dentist).getDentist_id() >= 1 && connTrue());
     }
 
     @Test
@@ -61,14 +61,14 @@ class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
         DentistService dentistService = new DentistService(new DentistDaoH2());
         Dentist dentist = new Dentist("Juani", "Mrtin", 629);
         dentistService.update(7, dentist);
-        Assertions.assertTrue(dentistService.search(2).getName().equals("Juani") && beforeAll());
+        Assertions.assertTrue(dentistService.search(2).getName().equals("Juani") && connTrue());
     }
 
     @Test
     public void deleteDentist() {
         DentistService dentistService = new DentistService(new DentistDaoH2());
         dentistService.delete(9);
-        Assertions.assertTrue(dentistService.search(5) == null && beforeAll());
+        Assertions.assertTrue(dentistService.search(5) == null && connTrue());
     }
 
     @Test
@@ -76,7 +76,7 @@ class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
         PatientService patientService = new PatientService(new PatientDaoH2());
         Address address = new Address("siempre viva", 3423, "Rio Cuarto", "Cordoba");
         Patient patient = new Patient("Carlos", "Baute", address, 1234567, new Date());
-        Assertions.assertTrue(patientService.register(patient).getPatient_id() >= 1 && beforeAll());
+        Assertions.assertTrue(patientService.register(patient).getPatient_id() >= 1 && connTrue());
 
     }
 
@@ -96,8 +96,8 @@ class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
         Address address = new Address(idExample, "siempre muerta", 3423, "BA", "BSAS");
         Patient patient = new Patient("Paciente", "guerra", address, 1234567, new Date());
         patientService.update(idExample, patient);
-        Assertions.assertTrue(patientService.search(idExample).getLastName().equals("guerra"));
-        Assertions.assertTrue(patientService.search(idExample).getAddress().getState().equals("BSAS"));
+        Assertions.assertEquals("guerra", patientService.search(idExample).getLastName());
+        Assertions.assertEquals("BSAS", patientService.search(idExample).getAddress().getState());
 
 
     }
@@ -106,7 +106,7 @@ class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
     public void deletePatient() {
         PatientService patientService = new PatientService(new PatientDaoH2());
         patientService.delete(3);
-        Assertions.assertTrue(patientService.search(3) == null && beforeAll());
+        Assertions.assertTrue(patientService.search(3) == null && connTrue());
 
 
     }
@@ -128,7 +128,7 @@ class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
         Dentist dentist = dentistService.search(2);
         Appointment appointment = new Appointment(dentist, patient, new Date());
         System.out.println(appointment.toString());
-        Assertions.assertTrue(appointmentService.register(appointment).getAppointment_id() >= 1 && beforeAll());
+        Assertions.assertTrue(appointmentService.register(appointment).getAppointment_id() >= 1 && connTrue());
 
     }
 
@@ -147,10 +147,10 @@ class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
         AppointmentService appointmentService = new AppointmentService(new AppointmentDaoH2());
         Appointment appointment = new Appointment(new Dentist(2, "Pablo", "Mrtin", 629), new Patient(2, "Paciente", "guerra", new Address(2, "siempre muerta", 3423, "BA", "BSAS"), 1234567, new Date()), new Date());
         appointmentService.update(3, appointment);
-        Assertions.assertTrue(appointmentService.search(3).getDentist().getName().equals("Pablo") && beforeAll());
-        Assertions.assertTrue(appointmentService.search(3).getPatient().getName().equals("Paciente") && beforeAll());
-        Assertions.assertTrue(appointmentService.search(3).getDentist().getName().equals("Pablo") && beforeAll());
-        Assertions.assertTrue(appointmentService.search(3).getPatient().getAddress().getCity().equals("BA") && beforeAll());
+        Assertions.assertTrue(appointmentService.search(3).getDentist().getName().equals("Pablo") && connTrue());
+        Assertions.assertTrue(appointmentService.search(3).getPatient().getName().equals("Paciente") && connTrue());
+        Assertions.assertTrue(appointmentService.search(3).getDentist().getName().equals("Pablo") && connTrue());
+        Assertions.assertTrue(appointmentService.search(3).getPatient().getAddress().getCity().equals("BA") && connTrue());
 
     }
 
@@ -158,7 +158,7 @@ class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
     public void deleteAppointment() {
         AppointmentService appointmentService = new AppointmentService(new AppointmentDaoH2());
         appointmentService.delete(2);
-        Assertions.assertTrue(appointmentService.search(2) == null && beforeAll());
+        Assertions.assertTrue(appointmentService.search(2) == null && connTrue());
 
     }
 
@@ -169,5 +169,6 @@ class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
 
 
     }
+
 
 }

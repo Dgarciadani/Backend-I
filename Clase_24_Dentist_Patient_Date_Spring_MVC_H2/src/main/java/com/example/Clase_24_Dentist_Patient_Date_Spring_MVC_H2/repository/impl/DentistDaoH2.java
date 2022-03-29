@@ -1,5 +1,6 @@
 package com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.repository.impl;
 
+import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.domain.Appointment;
 import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.domain.Dentist;
 import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.repository.Idao;
 import org.slf4j.Logger;
@@ -89,6 +90,7 @@ public class DentistDaoH2 implements Idao<Dentist> {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         String SQL_UPDATE = "UPDATE DENTISTS SET NAME = ?, LASTNAME = ?, REGISTER = ? WHERE ID = ?";
+        Dentist dentist1 = null;
         try {
             logger.info("Updating dentist");
             Class.forName(DB_JDBC_DRIVER);
@@ -101,15 +103,16 @@ public class DentistDaoH2 implements Idao<Dentist> {
             preparedStatement.executeUpdate();
             preparedStatement.close();
             dentist.setDentist_id(id);
+            dentist1 = dentist;
             logger.info("Dentist updated");
 
         } catch (Exception e) {
-            logger.error("Error updating dentist, "+ e.getMessage());
+            logger.error("Error updating dentist, " + e.getMessage());
 
         }
 
 
-        return dentist;
+        return dentist1;
     }
 
     @Override
@@ -155,7 +158,7 @@ public class DentistDaoH2 implements Idao<Dentist> {
             logger.info("Dentists List found");
 
         } catch (Exception e) {
-            logger.error("Error searching all dentists"+ e.getMessage());
+            logger.error("Error searching all dentists" + e.getMessage());
 
         }
         return dentistsList;
