@@ -15,6 +15,7 @@ public class Appointment {
         this.date = date;
     }
 
+
     public int getAppointment_id() {
         return appointment_id;
     }
