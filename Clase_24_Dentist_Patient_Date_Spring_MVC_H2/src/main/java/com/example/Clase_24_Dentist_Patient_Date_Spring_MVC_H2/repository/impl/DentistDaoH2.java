@@ -44,7 +44,7 @@ public class DentistDaoH2 implements Idao<Dentist> {
                 dentist.setDentist_id(resultSet.getInt(1));
             }
             preparedStatement.close();
-            logger.info("Dentist registered");
+            logger.info("Dentist registered successfully");
 
 
         } catch (Exception e) {

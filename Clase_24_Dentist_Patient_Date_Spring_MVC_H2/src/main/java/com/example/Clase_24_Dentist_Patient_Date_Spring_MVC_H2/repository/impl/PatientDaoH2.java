@@ -32,6 +32,7 @@ public class PatientDaoH2 implements Idao<Patient> {
 
         try {
             logger.info("Registering patient");
+            Class.forName(DB_JDBC_DRIVER);
             connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
             preparedStatement = connection.prepareStatement(SQL_INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
             Address address = patient.getAddress();
@@ -94,6 +95,7 @@ public class PatientDaoH2 implements Idao<Patient> {
         String SQL_UPDATE = "UPDATE PATIENTS SET NAME = ?, LASTNAME = ?, ADDRESS_ID = ?, DNI = ?, DATE_INIT = ? WHERE ID = ?";
         try {
             logger.info("Updating patient");
+            Class.forName(DB_JDBC_DRIVER);
             connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
             preparedStatement = connection.prepareStatement(SQL_UPDATE);
             preparedStatement.setString(1, patient.getName());
@@ -120,6 +122,7 @@ public class PatientDaoH2 implements Idao<Patient> {
         String SQL_DELETE = "DELETE FROM PATIENTS WHERE ID = ?";
         try {
             logger.info("Deleting patient");
+            Class.forName(DB_JDBC_DRIVER);
             connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
             preparedStatement = connection.prepareStatement(SQL_DELETE);
             addressDaoH2.delete(search(id).getAddress().getAddressId());
@@ -141,6 +144,7 @@ public class PatientDaoH2 implements Idao<Patient> {
         List<Patient> patientsList = new ArrayList();
         String SQL_SELECT = "SELECT * FROM PATIENTS";
         try {
+            Class.forName(DB_JDBC_DRIVER);
             logger.info("Searching all patients");
             connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
             preparedStatement = connection.prepareStatement(SQL_SELECT);

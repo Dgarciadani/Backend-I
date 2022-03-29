@@ -18,7 +18,7 @@ public class AppointmentDaoH2 implements Idao<Appointment> {
 
 
     private static final String DB_JDBC_DRIVER = "org.h2.Driver";
-    private static final String DB_URl = "jdbc:h2:~/test";
+    private static final String DB_URl = "jdbc:h2:~/test;INIT=RUNSCRIPT FROM 'create.sql'";
     private static final String DB_USER = "sa";
     private static final String DB_PASS = "";
     PatientService patientService = new PatientService(new PatientDaoH2());
@@ -28,14 +28,14 @@ public class AppointmentDaoH2 implements Idao<Appointment> {
     public Appointment register(Appointment appointment) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        String SQL_INSERT = "INSERT INTO appointments (patient_id, dentist_id, date) VALUES ( ?, ?, ?)";
+        String SQL_INSERT = "INSERT INTO appointments (dentist_id, patient_id, date_init) VALUES ( ?, ?, ?)";
         try {
             logger.info("Registering new appointment");
             Class.forName(DB_JDBC_DRIVER);
             connection = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
             preparedStatement = connection.prepareStatement(SQL_INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
-            preparedStatement.setInt(1, appointment.getPatient().getPatient_id());
-            preparedStatement.setInt(2, appointment.getDentist().getDentist_id());
+            preparedStatement.setInt(1, appointment.getDentist().getDentist_id());
+            preparedStatement.setInt(2, appointment.getPatient().getPatient_id());
             preparedStatement.setDate(3, new Date(appointment.getDate().getTime()));
             preparedStatement.executeUpdate();
             ResultSet keys = preparedStatement.getGeneratedKeys();
@@ -54,7 +54,7 @@ public class AppointmentDaoH2 implements Idao<Appointment> {
     public Appointment search(int id) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        String SQL_SELECT = "SELECT * FROM APPOINTMENTS WHERE APPOINTMENT_ID = ?";
+        String SQL_SELECT = "SELECT * FROM APPOINTMENTS WHERE ID = ?";
         Appointment appointment = null;
 
         try {
@@ -77,13 +77,14 @@ public class AppointmentDaoH2 implements Idao<Appointment> {
             logger.error("Error searching for appointment" + e.getMessage());
         }
         return appointment;
+
     }
 
     @Override
     public Appointment update(int id, Appointment appointment) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        String SQL_UPDATE = "UPDATE APPOINTMENTS SET PATIENT_ID = ?, DENTIST_ID = ?, DATE = ? WHERE APPOINTMENT_ID = ?";
+        String SQL_UPDATE = "UPDATE APPOINTMENTS SET PATIENT_ID = ?, DENTIST_ID = ?, DATE = ? WHERE ID = ?";
         Appointment appointment1 = null;
         try {
             logger.info("Updating appointment");
@@ -110,7 +111,7 @@ public class AppointmentDaoH2 implements Idao<Appointment> {
     public void delete(int id) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        String SQL_DELETE = "DELETE FROM APPOINTMENTS WHERE APPOINTMENT_ID = ?";
+        String SQL_DELETE = "DELETE FROM APPOINTMENTS WHERE ID = ?";
         try {
             logger.info("Deleting appointment");
             Class.forName(DB_JDBC_DRIVER);
@@ -143,6 +144,7 @@ public class AppointmentDaoH2 implements Idao<Appointment> {
                 Appointment appointment = new Appointment(resultSet.getInt(1), dentist, patient, new java.util.Date(resultSet.getDate(4).getTime()));
                 appointmentsList.add(appointment);
             }
+            logger.info("All appointments found successfully");
         } catch (Exception e) {
             logger.error("Error searching for all appointments, " + e.getMessage());
         }

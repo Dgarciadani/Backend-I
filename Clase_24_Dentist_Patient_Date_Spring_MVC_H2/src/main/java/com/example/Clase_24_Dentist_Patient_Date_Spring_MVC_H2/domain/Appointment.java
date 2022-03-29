@@ -15,6 +15,11 @@ public class Appointment {
         this.date = date;
     }
 
+    public Appointment(Dentist dentist, Patient patient, Date date) {
+        this.dentist = dentist;
+        this.patient = patient;
+        this.date = date;
+    }
 
     public int getAppointment_id() {
         return appointment_id;
@@ -46,5 +51,15 @@ public class Appointment {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Appointment{" +
+                "appointment_id=" + appointment_id +
+                ", dentist=" + dentist +
+                ", patient=" + patient +
+                ", date=" + date +
+                '}';
     }
 }
