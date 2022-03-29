@@ -30,6 +30,10 @@ public class MedicineService {
         medicineDao.delete(id);
     }
 
+    public Medicine update(int id, Medicine medicine) {
+        return medicineDao.update(id, medicine);
+    }
+
     public Medicine search(int id) {
         return medicineDao.search(id);
     }

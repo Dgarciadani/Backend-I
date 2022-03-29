@@ -10,6 +10,8 @@ public interface Idao<T> {
 
     public T search(int id);
 
+    public T update(int id, T t);
+
     public List<T> searchAll();
 
 }

@@ -1,7 +1,7 @@
-package com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.idao.impl;
+package com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.repository.impl;
 
 import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.domain.Dentist;
-import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.idao.Idao;
+import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.repository.Idao;
 import org.slf4j.Logger;
 
 

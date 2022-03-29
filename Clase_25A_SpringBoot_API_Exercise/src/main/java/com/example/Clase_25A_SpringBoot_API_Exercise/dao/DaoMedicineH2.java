@@ -92,6 +92,33 @@ public class DaoMedicineH2 implements Idao<Medicine> {
     }
 
     @Override
+    public Medicine update(int id, Medicine medicine) {
+        Connection conn = null;
+        PreparedStatement prepareStatement = null;
+        Medicine medicine1 = null;
+        String SQL_UPDATE = "UPDATE MEDICINES SET NAME=?,BRAND=?,REGISTRY=? WHERE ID=?";
+        try {
+            Class.forName(DB_JDBC_DRIVER);
+            conn = DriverManager.getConnection(DB_URl, DB_USER, DB_PASS);
+            prepareStatement = conn.prepareStatement(SQL_UPDATE);
+            prepareStatement.setString(1, medicine.getName());
+            prepareStatement.setString(2, medicine.getBrand());
+            prepareStatement.setInt(3, medicine.getRegistryFDA());
+            prepareStatement.setInt(4, id);
+            prepareStatement.executeUpdate();
+            prepareStatement.close();
+            conn.close();
+            medicine1 = medicine;
+            medicine1.setId(id);
+            logger.info("UPDATE medicine: SUCCESS");
+
+        }catch (Exception e) {
+            logger.error("UPDATE medicine: ERROR, " + e.getMessage());
+        }
+        return medicine1;
+    }
+
+    @Override
     public List<Medicine> searchAll() {
         List<Medicine> medicineList = new ArrayList();
         Connection conn = null;
