@@ -1,13 +1,13 @@
 package com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.domain;
 
 public class Address {
-    private int addressId;
+    private Integer addressId;
     private String street;
-    private int door;
+    private Integer door;
     private String city;
     private String state;
 
-    public Address(int addressId, String street, int door, String city, String state) {
+    public Address(Integer addressId, String street, Integer door, String city, String state) {
         this.addressId = addressId;
         this.street = street;
         this.door = door;
@@ -15,18 +15,18 @@ public class Address {
         this.state = state;
     }
 
-    public Address(String street, int door, String city, String state) {
+    public Address(String street, Integer door, String city, String state) {
         this.street = street;
         this.door = door;
         this.city = city;
         this.state = state;
     }
 
-    public int getAddressId() {
+    public Integer getAddressId() {
         return addressId;
     }
 
-    public void setAddressId(int addressId) {
+    public void setAddressId(Integer addressId) {
         this.addressId = addressId;
     }
 
@@ -38,11 +38,11 @@ public class Address {
         this.street = street;
     }
 
-    public int getDoor() {
+    public Integer getDoor() {
         return door;
     }
 
-    public void setDoor(int door) {
+    public void setDoor(Integer door) {
         this.door = door;
     }
 

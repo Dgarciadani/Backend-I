@@ -27,17 +27,17 @@ public class AppointmentService implements Idao<Appointment> {
     }
 
     @Override
-    public Appointment search(int id) {
+    public Appointment search(Integer id) {
        return appointmentDao.search(id);
     }
 
     @Override
-    public Appointment update(int id, Appointment appointment) {
+    public Appointment update(Integer id, Appointment appointment) {
         return appointmentDao.update(id, appointment);
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(Integer id) {
         appointmentDao.delete(id);
     }
 

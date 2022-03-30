@@ -1,29 +1,29 @@
 package com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.domain;
 
 public class Dentist {
-    private int dentist_id;
+    private Integer dentist_id;
     private String name;
     private String lastName;
-    private int register;
+    private Integer register;
 
-    public Dentist(int id, String name, String lastName, int register) {
+    public Dentist(Integer id, String name, String lastName, Integer register) {
         this.dentist_id = id;
         this.name = name;
         this.lastName = lastName;
         this.register = register;
     }
 
-    public Dentist(String name, String lastName, int register) {
+    public Dentist(String name, String lastName, Integer register) {
         this.name = name;
         this.lastName = lastName;
         this.register = register;
     }
 
-    public int getDentist_id() {
+    public Integer getDentist_id() {
         return dentist_id;
     }
 
-    public void setDentist_id(int dentist_id) {
+    public void setDentist_id(Integer dentist_id) {
         this.dentist_id = dentist_id;
     }
 
@@ -43,11 +43,11 @@ public class Dentist {
         this.lastName = lastName;
     }
 
-    public int getRegister() {
+    public Integer getRegister() {
         return register;
     }
 
-    public void setRegister(int register) {
+    public void setRegister(Integer register) {
         this.register = register;
     }
 

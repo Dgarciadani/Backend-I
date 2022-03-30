@@ -22,13 +22,13 @@ public class PatientService {
      public Patient register(Patient patient){
         return patientIdao.register(patient);
      }
-     public Patient search(int id){
+     public Patient search(Integer id){
         return patientIdao.search(id);
      }
-     public Patient update(int id, Patient patient){
+     public Patient update(Integer id, Patient patient){
         return patientIdao.update(id, patient);
      }
-     public void delete(int id){
+     public void delete(Integer id){
         patientIdao.delete(id);
      }
      public List<Patient> searchAll(){

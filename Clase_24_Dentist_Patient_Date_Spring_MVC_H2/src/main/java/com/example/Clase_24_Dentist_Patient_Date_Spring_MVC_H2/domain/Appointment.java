@@ -3,12 +3,12 @@ package com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.domain;
 import java.util.Date;
 
 public class Appointment {
-    private int appointment_id;
+    private Integer appointment_id;
     private Dentist dentist;
     private Patient patient;
     private Date date;
 
-    public Appointment(int appointment_id, Dentist dentist, Patient patient, Date date) {
+    public Appointment(Integer appointment_id, Dentist dentist, Patient patient, Date date) {
         this.appointment_id = appointment_id;
         this.dentist = dentist;
         this.patient = patient;
@@ -21,11 +21,11 @@ public class Appointment {
         this.date = date;
     }
 
-    public int getAppointment_id() {
+    public Integer getAppointment_id() {
         return appointment_id;
     }
 
-    public void setAppointment_id(int appointment_id) {
+    public void setAppointment_id(Integer appointment_id) {
         this.appointment_id = appointment_id;
     }
 

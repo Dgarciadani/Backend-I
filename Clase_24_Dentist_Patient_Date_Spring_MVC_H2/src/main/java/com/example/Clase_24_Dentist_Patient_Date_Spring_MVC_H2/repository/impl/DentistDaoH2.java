@@ -1,9 +1,7 @@
 package com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.repository.impl;
 
-import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.domain.Appointment;
 import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.domain.Dentist;
 import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.repository.Idao;
-import org.slf4j.Logger;
 
 
 import java.sql.Connection;
@@ -13,9 +11,11 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class DentistDaoH2 implements Idao<Dentist> {
-    Logger logger = org.slf4j.LoggerFactory.getLogger(DentistDaoH2.class);
+    Logger logger = LogManager.getLogger(DentistDaoH2.class);
 
     private static final String DB_JDBC_DRIVER = "org.h2.Driver";
     private static final String DB_URl = "jdbc:h2:~/test;INIT=RUNSCRIPT FROM 'create.sql'";
@@ -56,7 +56,7 @@ public class DentistDaoH2 implements Idao<Dentist> {
     }
 
     @Override
-    public Dentist search(int id) {
+    public Dentist search(Integer id) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         String SQL_READ = "SELECT * FROM DENTISTS WHERE ID = ?";
@@ -86,7 +86,7 @@ public class DentistDaoH2 implements Idao<Dentist> {
     }
 
     @Override
-    public Dentist update(int id, Dentist dentist) {
+    public Dentist update(Integer id, Dentist dentist) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         String SQL_UPDATE = "UPDATE DENTISTS SET NAME = ?, LASTNAME = ?, REGISTER = ? WHERE ID = ?";
@@ -116,7 +116,7 @@ public class DentistDaoH2 implements Idao<Dentist> {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(Integer id) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         String SQL_DELETE = "DELETE FROM DENTISTS WHERE ID = ?";

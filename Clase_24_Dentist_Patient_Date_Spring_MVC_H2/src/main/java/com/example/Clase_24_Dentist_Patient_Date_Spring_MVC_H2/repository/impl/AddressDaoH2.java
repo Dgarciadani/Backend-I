@@ -2,7 +2,6 @@ package com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.repository.impl;
 
 import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.domain.Address;
 import com.example.Clase_24_Dentist_Patient_Date_Spring_MVC_H2.repository.Idao;
-import org.slf4j.Logger;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,8 +10,11 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class AddressDaoH2 implements Idao<Address> {
-    Logger logger = org.slf4j.LoggerFactory.getLogger(AddressDaoH2.class);
+    Logger logger = LogManager.getLogger(AddressDaoH2.class);
 
     private static final String DB_JDBC_DRIVER = "org.h2.Driver";
     private static final String DB_URl = "jdbc:h2:~/test;INIT=RUNSCRIPT FROM 'create.sql'";
@@ -50,7 +52,7 @@ public class AddressDaoH2 implements Idao<Address> {
     }
 
     @Override
-    public Address search(int id) {
+    public Address search(Integer id) {
         logger.info("Searching address with id: " + id);
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -74,7 +76,7 @@ public class AddressDaoH2 implements Idao<Address> {
     }
 
     @Override
-    public Address update(int id, Address address) {
+    public Address update(Integer id, Address address) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         String SQL_UPDATE = "UPDATE ADDRESS SET STREET = ?, DOOR = ?, CITY = ?, STATE = ? WHERE ID = ?";
@@ -100,7 +102,7 @@ public class AddressDaoH2 implements Idao<Address> {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(Integer id) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         String SQL_DELETE = "DELETE FROM ADDRESS WHERE ID = ?";

@@ -6,11 +6,11 @@ public interface Idao<T> {
 
     public T register(T t);
 
-    public T search(int id);
+    public T search(Integer id);
 
-    public T update(int id, T t);
+    public T update(Integer id, T t);
 
-    public void delete(int id);
+    public void delete(Integer id);
 
     public List<T> searchAll();
 

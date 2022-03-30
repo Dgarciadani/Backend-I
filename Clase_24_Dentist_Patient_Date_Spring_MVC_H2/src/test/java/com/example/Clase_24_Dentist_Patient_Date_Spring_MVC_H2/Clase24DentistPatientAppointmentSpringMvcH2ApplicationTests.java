@@ -23,6 +23,7 @@ import java.util.Date;
 class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
 
 
+
     public static boolean connTrue() {
         boolean conn = false;
         String DB_JDBC_DRIVER = "org.h2.Driver";
@@ -53,7 +54,7 @@ class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
     public void searchDentist() {
         DentistService dentistService = new DentistService(new DentistDaoH2());
         Dentist dentist = dentistService.search(7);
-        Assertions.assertEquals("Pablo", dentist.getName());
+        Assertions.assertEquals("Juani", dentist.getName());
     }
 
     @Test
@@ -169,6 +170,7 @@ class Clase24DentistPatientAppointmentSpringMvcH2ApplicationTests {
 
 
     }
+
 
 
 }
