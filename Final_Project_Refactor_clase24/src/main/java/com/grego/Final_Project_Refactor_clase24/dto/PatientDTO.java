@@ -1,52 +1,28 @@
 package com.grego.Final_Project_Refactor_clase24.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.grego.Final_Project_Refactor_clase24.domain.Address;
+import lombok.Data;
 
+import javax.validation.constraints.NotEmpty;
+import java.util.Date;
+
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 public class PatientDTO {
-    private String fullName;
+    @NotEmpty(message = "The name is required")
+    private String name;
+    @NotEmpty(message = "The last name is required")
+    private String lastName;
+    @NotEmpty(message = "Address is required")
+    private Address address;
+    @NotEmpty(message= "The Dni is required")
     private Integer dni;
-    private String address;
-    private String date;
+    @NotEmpty(message = "The date is required")
+    private Date dateInit;
 
-    public PatientDTO(String fullName, Integer dni, String address, String date) {
-        this.fullName = fullName;
-        this.dni = dni;
-        this.address = address;
-        this.date = date;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public Integer getDni() {
-        return dni;
-    }
-
-    public void setDni(Integer dni) {
-        this.dni = dni;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
+    public PatientDTO() {
     }
 }
 

@@ -1,12 +1,15 @@
 package com.grego.Final_Project_Refactor_clase24.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+@Getter
+@Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
-
 public class AddressDTO {
 
 
@@ -18,4 +21,6 @@ public class AddressDTO {
     private String city;
     @NotEmpty(message = "State cannot be empty")
     private String state;
+
+    public AddressDTO(){}
 }
