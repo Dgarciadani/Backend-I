@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DentistDTO {
-    private Integer dentist_id;
+
     @NotEmpty(message = "Name is required")
     private String name;
     @NotEmpty(message = "Last Name is required")

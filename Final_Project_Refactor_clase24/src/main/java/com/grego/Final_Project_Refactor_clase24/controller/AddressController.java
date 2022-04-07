@@ -14,28 +14,28 @@ public class AddressController {
     private AddressService addressService;
 
     @GetMapping("/id={id}")
-    public ResponseEntity<AddressDTO> getAddress(@PathVariable Integer id){
+    public ResponseEntity<AddressDTO> getAddress(@PathVariable Integer id) {
         return ResponseEntity.ok(addressService.findById(id));
     }
 
     @PostMapping("/add")
-    public ResponseEntity<AddressDTO> addAddress(@RequestBody AddressDTO addressDTO){
+    public ResponseEntity<AddressDTO> addAddress(@RequestBody AddressDTO addressDTO) {
         return ResponseEntity.ok(addressService.save(addressDTO));
     }
 
     @PutMapping("/id={id}")
-    public ResponseEntity<AddressDTO> updateAddress(@PathVariable Integer id, @RequestBody AddressDTO addressDTO){
+    public ResponseEntity<AddressDTO> updateAddress(@PathVariable Integer id, @RequestBody AddressDTO addressDTO) {
         return ResponseEntity.ok(addressService.update(id, addressDTO));
     }
 
     @DeleteMapping("/id={id}")
-    public ResponseEntity<String> deleteAddress(@PathVariable Integer id){
+    public ResponseEntity<String> deleteAddress(@PathVariable Integer id) {
         addressService.deleteById(id);
-        return ResponseEntity.ok("Address deleted");
+        return ResponseEntity.ok().body("Address deleted");
     }
 
     @GetMapping("/all")
-    public ResponseEntity<Iterable<AddressDTO>> getAllAddress(){
+    public ResponseEntity<Iterable<AddressDTO>> getAllAddress() {
         return ResponseEntity.ok(addressService.findAll());
     }
 }

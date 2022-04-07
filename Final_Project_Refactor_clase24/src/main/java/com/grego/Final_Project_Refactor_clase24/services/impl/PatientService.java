@@ -51,7 +51,9 @@ public class PatientService implements IPatientService {
         return patientRepository.findAll().stream().map(this::mapToDTO).collect(java.util.stream.Collectors.toList());
     }
 
-
+    public List<PatientDTO> findByName(String name) {
+        return patientRepository.findByName(name).stream().map(this::mapToDTO).collect(java.util.stream.Collectors.toList());
+    }
 /*    public PatientDTO getPatient(Integer id) {
         PatientDTO patientDTO = null;
         Optional<Patient> patient = patientRepository.findById(id);

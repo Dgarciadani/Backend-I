@@ -23,15 +23,18 @@ public class AppointmentController {
     public ResponseEntity<AppointmentDTO> addAppointment(@RequestBody AppointmentDTO appointmentDTO) {
         return ResponseEntity.ok(appointmentService.save(appointmentDTO));
     }
+
     @PutMapping("/id={id}")
     public ResponseEntity<AppointmentDTO> updateAppointment(@PathVariable Integer id, @RequestBody AppointmentDTO appointmentDTO) {
         return ResponseEntity.ok(appointmentService.update(id, appointmentDTO));
     }
+
     @DeleteMapping("/id={id}")
-    public ResponseEntity<AppointmentDTO> deleteAppointment(@PathVariable Integer id) {
+    public ResponseEntity<String> deleteAppointment(@PathVariable Integer id) {
         appointmentService.deleteById(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body("Appointment deleted");
     }
+
     @GetMapping("/all")
     public ResponseEntity<Iterable<AppointmentDTO>> findAllAppointments() {
         return ResponseEntity.ok(appointmentService.findAll());

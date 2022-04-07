@@ -27,15 +27,18 @@ public class DentistController {
     public ResponseEntity<DentistDTO> addDentist(@Valid @RequestBody DentistDTO dentistDTO) {
         return ResponseEntity.ok().body(dentistService.save(dentistDTO));
     }
+
     @PutMapping("id={id}")
     public ResponseEntity<DentistDTO> updateDentist(@PathVariable Integer id, @Valid @RequestBody DentistDTO dentistDTO) {
         return ResponseEntity.ok().body(dentistService.update(id, dentistDTO));
     }
+
     @DeleteMapping("/id={id}")
-    public ResponseEntity<DentistDTO> deleteDentist(@PathVariable Integer id) {
+    public ResponseEntity<String> deleteDentist(@PathVariable Integer id) {
         dentistService.deleteById(id);
-        return ResponseEntity.ok().body(null);
+        return ResponseEntity.ok().body("Dentist deleted");
     }
+
     @GetMapping("/all")
     public ResponseEntity<Iterable<DentistDTO>> getAllDentists() {
         return ResponseEntity.ok().body(dentistService.findAll());

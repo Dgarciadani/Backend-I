@@ -19,26 +19,32 @@ public class PatientController {
     public ResponseEntity<PatientDTO> findById(@PathVariable Integer id) {
         return ResponseEntity.ok(patientService.findById(id));
     }
+
     @PostMapping("/add")
     public ResponseEntity<PatientDTO> savePatient(@RequestBody PatientDTO patientDTO) {
         return ResponseEntity.ok(patientService.save(patientDTO));
     }
 
     @PutMapping("/id={id}")
-    public ResponseEntity<PatientDTO> updatePatient(@PathVariable Integer id,@RequestBody PatientDTO patientDTO) {
-        return ResponseEntity.ok(patientService.update(id,patientDTO));
+    public ResponseEntity<PatientDTO> updatePatient(@PathVariable Integer id, @RequestBody PatientDTO patientDTO) {
+        return ResponseEntity.ok(patientService.update(id, patientDTO));
     }
 
     @DeleteMapping("/id={id}")
-    public ResponseEntity<PatientDTO> deletePatient(@PathVariable Integer id) {
+    public ResponseEntity<String> deletePatient(@PathVariable Integer id) {
         patientService.deleteById(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body("Patient deleted");
         //HABRIA QUE REFACTORIZAR PARA OPTENER UNA RESPUESTA DE DELETE
     }
 
     @GetMapping("/all")
     public ResponseEntity<Iterable<PatientDTO>> findAll() {
         return ResponseEntity.ok(patientService.findAll());
+    }
+
+    @GetMapping("/name={name}")
+    public ResponseEntity<Iterable<PatientDTO>> findByName(@PathVariable String name) {
+        return ResponseEntity.ok(patientService.findByName(name));
     }
 }
 
