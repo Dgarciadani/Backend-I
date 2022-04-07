@@ -1,9 +1,13 @@
 package com.grego.Final_Project_Refactor_clase24.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.grego.Final_Project_Refactor_clase24.domain.Address;
 import lombok.Data;
 
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
@@ -17,8 +21,8 @@ public class PatientDTO {
     private String lastName;
     @NotEmpty(message = "The Dni is required")
     private Integer dni;
-
-    private Address address;
+    @OneToOne(mappedBy = "patient", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private AddressDTO address;
 
     public PatientDTO() {
     }
