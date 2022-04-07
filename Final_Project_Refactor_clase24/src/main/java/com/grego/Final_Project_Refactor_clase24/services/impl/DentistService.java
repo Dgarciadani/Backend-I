@@ -1,4 +1,4 @@
-package com.grego.Final_Project_Refactor_clase24.services;
+package com.grego.Final_Project_Refactor_clase24.services.impl;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -6,6 +6,7 @@ import com.grego.Final_Project_Refactor_clase24.domain.Address;
 import com.grego.Final_Project_Refactor_clase24.domain.Dentist;
 import com.grego.Final_Project_Refactor_clase24.dto.DentistDTO;
 import com.grego.Final_Project_Refactor_clase24.repository.DentistRepository;
+import com.grego.Final_Project_Refactor_clase24.services.IDentistService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +25,7 @@ public class DentistService implements IDentistService {
 
     @Override
     public DentistDTO findById(Integer id) {
-        Dentist dentist = dentistRepository.findById(id).get();
-        return mapToDTO(dentist);
+        return dentistRepository.findById(id).map(this::mapToDTO).orElse(null);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class DentistService implements IDentistService {
 
     @Override
     public List<DentistDTO> findAll() {
-        return dentistRepository.findAll().stream().map(dentist -> mapToDTO(dentist)).collect(java.util.stream.Collectors.toList());
+        return dentistRepository.findAll().stream().map(this::mapToDTO).collect(java.util.stream.Collectors.toList());
     }
 
     //-----Maper-----

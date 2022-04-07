@@ -21,8 +21,7 @@ public class AddressService implements IAddressService {
 
     @Override
     public AddressDTO findById(Integer id) {
-        Address address = addressRepository.findById(id).get();
-        return mapToDTO(address);
+        return addressRepository.findById(id).map(address -> mapToDTO(address)).orElse(null);
     }
 
     @Override

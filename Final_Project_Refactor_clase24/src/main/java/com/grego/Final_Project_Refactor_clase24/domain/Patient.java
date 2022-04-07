@@ -1,6 +1,7 @@
 package com.grego.Final_Project_Refactor_clase24.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,7 +30,7 @@ public class Patient {
 
     @NotNull
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", referencedColumnName = "addressId")
+    @JoinColumn(name = "address_id", referencedColumnName = "addressId", nullable = false)
     private Address address;
 
 
@@ -38,7 +39,8 @@ public class Patient {
     @NotNull
     private Date dateInit;
 
-
+    @OneToMany(mappedBy = "patient")
+    @JsonIgnore
     private Set<Appointment> appointments;
 
     public Patient() {

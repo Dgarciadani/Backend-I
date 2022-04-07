@@ -18,9 +18,13 @@ public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer appointment_id;
-    @NotNull
+
+    @ManyToOne
+    @JoinColumn(name = "dentist_id", nullable = false)
     private Dentist dentist;
-    @NotNull
+
+    @ManyToOne
+    @JoinColumn(name = "patient_id", nullable = false)
     private Patient patient;
     @NotNull
     private Date date;

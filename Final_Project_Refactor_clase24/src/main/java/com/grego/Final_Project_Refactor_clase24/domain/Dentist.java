@@ -1,5 +1,6 @@
 package com.grego.Final_Project_Refactor_clase24.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +12,7 @@ import java.util.Set;
 @Setter
 @Getter
 @Entity
-@Table(name= "dentists")
+@Table(name = "dentists")
 public class Dentist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +24,8 @@ public class Dentist {
     @NotNull
     private Integer register;
 
+    @OneToMany(mappedBy = "dentist")
+    @JsonIgnore
     private Set<Appointment> appointments;
 
     public Dentist() {
