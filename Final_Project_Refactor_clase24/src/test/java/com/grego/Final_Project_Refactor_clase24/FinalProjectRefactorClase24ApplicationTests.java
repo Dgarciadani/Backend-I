@@ -19,9 +19,9 @@ class FinalProjectRefactorClase24ApplicationTests {
         dentistDTO.setName("Dentist");
         dentistDTO.setLastName("Dentist");
         dentistDTO.setRegister(465465);
-        dentistDTO = dentistService.save(dentistDTO);
+        dentistService.save(dentistDTO);
 
-        Assertions.assertNotNull(dentistService.findById(dentistDTO.getDentist_id()));
+        Assertions.assertNotNull(dentistService.findById(1));
 
     }
 }

@@ -1,6 +1,10 @@
 package com.grego.Final_Project_Refactor_clase24.controller;
 
 
+import com.grego.Final_Project_Refactor_clase24.dto.PatientDTO;
+import com.grego.Final_Project_Refactor_clase24.services.impl.PatientService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -8,5 +12,33 @@ import org.springframework.web.bind.annotation.*;
 
 public class PatientController {
 
+    @Autowired
+    private PatientService patientService;
+
+    @GetMapping("/id={id}")
+    public ResponseEntity<PatientDTO> findById(@PathVariable Integer id) {
+        return ResponseEntity.ok(patientService.findById(id));
+    }
+    @PostMapping("/add")
+    public ResponseEntity<PatientDTO> savePatient(@RequestBody PatientDTO patientDTO) {
+        return ResponseEntity.ok(patientService.save(patientDTO));
+    }
+
+    @PutMapping("/id={id}")
+    public ResponseEntity<PatientDTO> updatePatient(@PathVariable Integer id,@RequestBody PatientDTO patientDTO) {
+        return ResponseEntity.ok(patientService.update(id,patientDTO));
+    }
+
+    @DeleteMapping("/id={id}")
+    public ResponseEntity<PatientDTO> deletePatient(@PathVariable Integer id) {
+        patientService.deleteById(id);
+        return ResponseEntity.ok().build();
+        //HABRIA QUE REFACTORIZAR PARA OPTENER UNA RESPUESTA DE DELETE
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<Iterable<PatientDTO>> findAll() {
+        return ResponseEntity.ok(patientService.findAll());
+    }
 }
 

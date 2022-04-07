@@ -11,7 +11,7 @@ import java.util.Date;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppointmentDTO {
 
-    private Integer id;
+
     private Dentist dentist;
     private Patient patient;
     @NotEmpty(message = "The date can not be empty")

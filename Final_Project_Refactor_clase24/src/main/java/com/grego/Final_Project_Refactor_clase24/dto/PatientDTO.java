@@ -15,9 +15,10 @@ public class PatientDTO {
     private String name;
     @NotEmpty(message = "The last name is required")
     private String lastName;
-    @NotEmpty(message= "The Dni is required")
+    @NotEmpty(message = "The Dni is required")
     private Integer dni;
 
+    private Address address;
 
     public PatientDTO() {
     }
