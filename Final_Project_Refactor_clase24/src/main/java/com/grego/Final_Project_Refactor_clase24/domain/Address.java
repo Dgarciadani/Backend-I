@@ -16,15 +16,15 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer addressId;
-    @NotNull
+
     private String street;
-    @NotNull
+
     private Integer door;
-    @NotNull
+
     private String city;
-    @NotNull
+
     private String state;
-    @NotNull
+
     @OneToOne(mappedBy = "address", cascade = CascadeType.ALL)
     private Patient patient;
 

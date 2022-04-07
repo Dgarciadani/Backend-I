@@ -22,21 +22,19 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer patient_id;
-    @NotNull
+
     private String name;
-    @NotNull
+
     private String lastName;
 
 
-    @NotNull
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "addressId", nullable = false)
     private Address address;
 
-
     @NotNull
     private Integer dni;
-    @NotNull
+
     private Date dateInit;
 
     @OneToMany(mappedBy = "patient")

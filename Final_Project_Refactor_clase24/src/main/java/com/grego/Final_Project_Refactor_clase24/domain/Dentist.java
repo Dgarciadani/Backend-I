@@ -17,11 +17,11 @@ public class Dentist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer dentist_id;
-    @NotNull
+
     private String name;
-    @NotNull
+
     private String lastName;
-    @NotNull
+
     private Integer register;
 
     @OneToMany(mappedBy = "dentist")
