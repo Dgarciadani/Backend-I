@@ -32,12 +32,12 @@ public class Patient {
     @JoinColumn(name = "address_id", referencedColumnName = "addressId", nullable = false)
     private Address address;
 
-    @NotNull
     private Integer dni;
 
     private Date dateInit;
 
     @OneToMany(mappedBy = "patient")
+
     @JsonIgnore
     private Set<Appointment> appointments;
 

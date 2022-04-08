@@ -1,8 +1,7 @@
 package com.grego.Final_Project_Refactor_clase24.services.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.grego.Final_Project_Refactor_clase24.domain.Patient;
-import com.grego.Final_Project_Refactor_clase24.dto.PatientDTO;
+import com.grego.Final_Project_Refactor_clase24.dto.PatientLongDTO;
 import com.grego.Final_Project_Refactor_clase24.repository.PatientRepository;
 import com.grego.Final_Project_Refactor_clase24.services.IPatientService;
 import org.modelmapper.ModelMapper;
@@ -10,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PatientService implements IPatientService {
@@ -22,12 +20,12 @@ public class PatientService implements IPatientService {
 
 
     @Override
-    public PatientDTO findById(Integer id) {
+    public PatientLongDTO findById(Integer id) {
         return patientRepository.findById(id).map(this::mapToDTO).orElse(null);
     }
 
     @Override
-    public PatientDTO save(PatientDTO entity) {
+    public PatientLongDTO save(PatientLongDTO entity) {
         Patient patient = mapToEntity(entity);
         patient = patientRepository.save(patient);
         return mapToDTO(patient);
@@ -39,7 +37,7 @@ public class PatientService implements IPatientService {
     }
 
     @Override
-    public PatientDTO update(Integer id, PatientDTO entity) {
+    public PatientLongDTO update(Integer id, PatientLongDTO entity) {
         Patient patient = mapToEntity(entity);
         patient.setPatient_id(id);
         patient = patientRepository.save(patient);
@@ -47,11 +45,11 @@ public class PatientService implements IPatientService {
     }
 
     @Override
-    public List<PatientDTO> findAll() {
+    public List<PatientLongDTO> findAll() {
         return patientRepository.findAll().stream().map(this::mapToDTO).collect(java.util.stream.Collectors.toList());
     }
 
-    public List<PatientDTO> findByName(String name) {
+    public List<PatientLongDTO> findByName(String name) {
         return patientRepository.findByName(name).stream().map(this::mapToDTO).collect(java.util.stream.Collectors.toList());
     }
 /*    public PatientDTO getPatient(Integer id) {
@@ -81,12 +79,12 @@ public class PatientService implements IPatientService {
     }*/
 
     //-----Mapper-----
-    public PatientDTO mapToDTO(Patient patient) {
-        return modelmapper.map(patient, PatientDTO.class);
+    public PatientLongDTO mapToDTO(Patient patient) {
+        return modelmapper.map(patient, PatientLongDTO.class);
     }
 
-    public Patient mapToEntity(PatientDTO patientDTO) {
-        return modelmapper.map(patientDTO, Patient.class);
+    public Patient mapToEntity(PatientLongDTO patientLongDTO) {
+        return modelmapper.map(patientLongDTO, Patient.class);
     }
 
 

@@ -1,10 +1,10 @@
 package com.grego.Final_Project_Refactor_clase24;
 
-import com.grego.Final_Project_Refactor_clase24.domain.Address;
-import com.grego.Final_Project_Refactor_clase24.domain.Patient;
 import com.grego.Final_Project_Refactor_clase24.dto.AddressDTO;
+import com.grego.Final_Project_Refactor_clase24.dto.AppointmentDTO;
 import com.grego.Final_Project_Refactor_clase24.dto.DentistDTO;
-import com.grego.Final_Project_Refactor_clase24.dto.PatientDTO;
+import com.grego.Final_Project_Refactor_clase24.dto.PatientLongDTO;
+import com.grego.Final_Project_Refactor_clase24.services.impl.AppointmentService;
 import com.grego.Final_Project_Refactor_clase24.services.impl.DentistService;
 import com.grego.Final_Project_Refactor_clase24.services.impl.PatientService;
 import org.junit.jupiter.api.Assertions;
@@ -19,6 +19,8 @@ class FinalProjectRefactorClase24ApplicationTests {
     DentistService dentistService;
     @Autowired
     PatientService patientService;
+    @Autowired
+    AppointmentService appointmentService;
 
     @Test
     public void saveDentist() {
@@ -34,8 +36,8 @@ class FinalProjectRefactorClase24ApplicationTests {
 
     @Test
     public void savePatient() {
-        PatientDTO patientdto = new PatientDTO();
-        patientdto.setName("JuanListo");
+        PatientLongDTO patientdto = new PatientLongDTO();
+        patientdto.setName("Pedro");
         patientdto.setLastName("Perez");
         AddressDTO address = new AddressDTO();
         address.setCity("Ciudad");
@@ -44,6 +46,20 @@ class FinalProjectRefactorClase24ApplicationTests {
         address.setState("Estado");
         patientdto.setAddress(address);
         patientdto.setDni(123456789);
+        patientdto.setDateInit(new java.sql.Date(new java.util.Date().getTime()));
         patientService.save(patientdto);
+    }
+
+    @Test
+    public void saveAppointment() {
+        AppointmentDTO appointmentDTO = new AppointmentDTO();
+        PatientLongDTO patient = new PatientLongDTO();
+        patient.setPatient_id(1);
+        DentistDTO dentist = new DentistDTO();
+        dentist.setDentist_id(1);
+        appointmentDTO.setPatient(patient);
+        appointmentDTO.setDentist(dentist);
+        appointmentDTO.setDate(new java.sql.Date(new java.util.Date().getTime()));
+        appointmentService.save(appointmentDTO);
     }
 }

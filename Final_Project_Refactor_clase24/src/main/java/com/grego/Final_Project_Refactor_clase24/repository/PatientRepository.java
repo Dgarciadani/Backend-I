@@ -1,7 +1,6 @@
 package com.grego.Final_Project_Refactor_clase24.repository;
 
 import com.grego.Final_Project_Refactor_clase24.domain.Patient;
-import com.grego.Final_Project_Refactor_clase24.dto.PatientDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
