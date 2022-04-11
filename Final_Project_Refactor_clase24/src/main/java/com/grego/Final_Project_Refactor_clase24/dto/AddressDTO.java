@@ -16,7 +16,7 @@ public class AddressDTO {
     private String city;
     private String state;
     @JsonIgnore
-    private PatientLongDTO patient;
+    private PatientDTO patient;
 
     public AddressDTO() {
     }

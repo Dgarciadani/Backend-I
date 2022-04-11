@@ -1,7 +1,8 @@
 package com.grego.Final_Project_Refactor_clase24.services.impl;
 
 import com.grego.Final_Project_Refactor_clase24.domain.Patient;
-import com.grego.Final_Project_Refactor_clase24.dto.PatientLongDTO;
+import com.grego.Final_Project_Refactor_clase24.dto.PatientDTO;
+import com.grego.Final_Project_Refactor_clase24.repository.AppointmentRepository;
 import com.grego.Final_Project_Refactor_clase24.repository.PatientRepository;
 import com.grego.Final_Project_Refactor_clase24.services.IPatientService;
 import org.modelmapper.ModelMapper;
@@ -19,13 +20,14 @@ public class PatientService implements IPatientService {
     private ModelMapper modelmapper;
 
 
+
     @Override
-    public PatientLongDTO findById(Integer id) {
+    public PatientDTO findById(Integer id) {
         return patientRepository.findById(id).map(this::mapToDTO).orElse(null);
     }
 
     @Override
-    public PatientLongDTO save(PatientLongDTO entity) {
+    public PatientDTO save(PatientDTO entity) {
         Patient patient = mapToEntity(entity);
         patient = patientRepository.save(patient);
         return mapToDTO(patient);
@@ -37,7 +39,7 @@ public class PatientService implements IPatientService {
     }
 
     @Override
-    public PatientLongDTO update(Integer id, PatientLongDTO entity) {
+    public PatientDTO update(Integer id, PatientDTO entity) {
         Patient patient = mapToEntity(entity);
         patient.setPatient_id(id);
         patient = patientRepository.save(patient);
@@ -45,11 +47,11 @@ public class PatientService implements IPatientService {
     }
 
     @Override
-    public List<PatientLongDTO> findAll() {
+    public List<PatientDTO> findAll() {
         return patientRepository.findAll().stream().map(this::mapToDTO).collect(java.util.stream.Collectors.toList());
     }
 
-    public List<PatientLongDTO> findByName(String name) {
+    public List<PatientDTO> findByName(String name) {
         return patientRepository.findByName(name).stream().map(this::mapToDTO).collect(java.util.stream.Collectors.toList());
     }
 /*    public PatientDTO getPatient(Integer id) {
@@ -79,12 +81,12 @@ public class PatientService implements IPatientService {
     }*/
 
     //-----Mapper-----
-    public PatientLongDTO mapToDTO(Patient patient) {
-        return modelmapper.map(patient, PatientLongDTO.class);
+    public PatientDTO mapToDTO(Patient patient) {
+        return modelmapper.map(patient, PatientDTO.class);
     }
 
-    public Patient mapToEntity(PatientLongDTO patientLongDTO) {
-        return modelmapper.map(patientLongDTO, Patient.class);
+    public Patient mapToEntity(PatientDTO patientDTO) {
+        return modelmapper.map(patientDTO, Patient.class);
     }
 
 

@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @Service
 public class AppointmentService implements IAppointmentService {
+
     @Autowired
     private AppointmentRepository appointmentRepository;
     @Autowired

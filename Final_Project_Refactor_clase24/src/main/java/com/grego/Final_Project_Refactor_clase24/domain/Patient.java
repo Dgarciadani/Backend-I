@@ -37,7 +37,6 @@ public class Patient {
     private Date dateInit;
 
     @OneToMany(mappedBy = "patient")
-
     @JsonIgnore
     private Set<Appointment> appointments;
 

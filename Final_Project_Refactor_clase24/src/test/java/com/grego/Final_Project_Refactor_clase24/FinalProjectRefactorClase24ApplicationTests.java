@@ -3,7 +3,7 @@ package com.grego.Final_Project_Refactor_clase24;
 import com.grego.Final_Project_Refactor_clase24.dto.AddressDTO;
 import com.grego.Final_Project_Refactor_clase24.dto.AppointmentDTO;
 import com.grego.Final_Project_Refactor_clase24.dto.DentistDTO;
-import com.grego.Final_Project_Refactor_clase24.dto.PatientLongDTO;
+import com.grego.Final_Project_Refactor_clase24.dto.PatientDTO;
 import com.grego.Final_Project_Refactor_clase24.services.impl.AppointmentService;
 import com.grego.Final_Project_Refactor_clase24.services.impl.DentistService;
 import com.grego.Final_Project_Refactor_clase24.services.impl.PatientService;
@@ -15,7 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class FinalProjectRefactorClase24ApplicationTests {
 
-    @Autowired
+   /* @Autowired
     DentistService dentistService;
     @Autowired
     PatientService patientService;
@@ -36,7 +36,7 @@ class FinalProjectRefactorClase24ApplicationTests {
 
     @Test
     public void savePatient() {
-        PatientLongDTO patientdto = new PatientLongDTO();
+        PatientDTO patientdto = new PatientDTO();
         patientdto.setName("Pedro");
         patientdto.setLastName("Perez");
         AddressDTO address = new AddressDTO();
@@ -53,7 +53,7 @@ class FinalProjectRefactorClase24ApplicationTests {
     @Test
     public void saveAppointment() {
         AppointmentDTO appointmentDTO = new AppointmentDTO();
-        PatientLongDTO patient = new PatientLongDTO();
+        PatientDTO patient = new PatientDTO();
         patient.setPatient_id(1);
         DentistDTO dentist = new DentistDTO();
         dentist.setDentist_id(1);
@@ -61,5 +61,5 @@ class FinalProjectRefactorClase24ApplicationTests {
         appointmentDTO.setDentist(dentist);
         appointmentDTO.setDate(new java.sql.Date(new java.util.Date().getTime()));
         appointmentService.save(appointmentDTO);
-    }
+    }*/
 }

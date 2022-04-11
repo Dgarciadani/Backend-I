@@ -9,7 +9,7 @@ import java.util.Date;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppointmentDTO {
 
-    private PatientLongDTO patient;
+    private PatientDTO patient;
 
     private DentistDTO dentist;
 

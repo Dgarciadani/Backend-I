@@ -1,7 +1,7 @@
 package com.grego.Final_Project_Refactor_clase24.controller;
 
 
-import com.grego.Final_Project_Refactor_clase24.dto.PatientLongDTO;
+import com.grego.Final_Project_Refactor_clase24.dto.PatientDTO;
 import com.grego.Final_Project_Refactor_clase24.services.impl.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,18 +16,18 @@ public class PatientController {
     private PatientService patientService;
 
     @GetMapping("/id={id}")
-    public ResponseEntity<PatientLongDTO> findById(@PathVariable Integer id) {
+    public ResponseEntity<PatientDTO> findById(@PathVariable Integer id) {
         return ResponseEntity.ok(patientService.findById(id));
     }
 
     @PostMapping("/add")
-    public ResponseEntity<PatientLongDTO> savePatient(@RequestBody PatientLongDTO patientLongDTO) {
-        return ResponseEntity.ok(patientService.save(patientLongDTO));
+    public ResponseEntity<PatientDTO> savePatient(@RequestBody PatientDTO patientDTO) {
+        return ResponseEntity.ok(patientService.save(patientDTO));
     }
 
     @PutMapping("/id={id}")
-    public ResponseEntity<PatientLongDTO> updatePatient(@PathVariable Integer id, @RequestBody PatientLongDTO patientLongDTO) {
-        return ResponseEntity.ok(patientService.update(id, patientLongDTO));
+    public ResponseEntity<PatientDTO> updatePatient(@PathVariable Integer id, @RequestBody PatientDTO patientDTO) {
+        return ResponseEntity.ok(patientService.update(id, patientDTO));
     }
 
     @DeleteMapping("/id={id}")
@@ -38,12 +38,12 @@ public class PatientController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<Iterable<PatientLongDTO>> findAll() {
+    public ResponseEntity<Iterable<PatientDTO>> findAll() {
         return ResponseEntity.ok(patientService.findAll());
     }
 
     @GetMapping("/name={name}")
-    public ResponseEntity<Iterable<PatientLongDTO>> findByName(@PathVariable String name) {
+    public ResponseEntity<Iterable<PatientDTO>> findByName(@PathVariable String name) {
         return ResponseEntity.ok(patientService.findByName(name));
     }
 }
