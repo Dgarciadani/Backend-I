@@ -7,9 +7,25 @@ window.addEventListener("load", () => {
   const findAllBtn = document.querySelector(".btn-findall");
   const allPatients_space = document.querySelector(".all-list");
   const newPatientBtn = document.querySelector(".btn-add");
+
+  const actualLocation = () => {
+    if (window.location.pathname === "/patient.html") {
+      document.querySelector(".btn-patients").classList.add("active");
+    } else if (window.location.pathname === "/dentist.html") {
+      document.querySelector(".btn-dentists").classList.add("active");
+    } else if (window.location.pathname === "/appointment.html") {
+      document.querySelector(".btn-appointments").classList.add("active");
+    }
+  };
+  actualLocation();
+
   document.querySelector(".btn-dentists").addEventListener("click", () => {
     window.location.href = "dentist.html";
   });
+  document.querySelector(".btn-appointments").addEventListener("click", () => {
+    window.location.href = "appointment.html";
+  });
+
   findAllBtn.addEventListener("click", () => {
     allPatients_space.innerHTML = "";
     getAllPatients();
@@ -19,14 +35,24 @@ window.addEventListener("load", () => {
     e.preventDefault();
     const search_value = document.querySelector(".search_value").value;
 
-    if (search_value != "") {
-      console.log("reloco");
-      console.log(search_value);
+    if (isEmailValid(search_value) && search_value !== "") {
+      getPatientByEmail(search_value);
+    } else if (isValidNumber(search_value) && search_value !== "") {
       getUserData(search_value);
     } else {
-      alert("Please enter a valid id/name");
+      alert("Invalid search");
     }
   });
+  function isValidNumber(value) {
+    let regex = new RegExp(/^\d+$/);
+    return regex.test(value);
+  }
+  function isEmailValid(email) {
+    let regex = new RegExp(
+      "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$"
+    );
+    return regex.test(email);
+  }
 
   newPatientBtn.addEventListener("click", () => {
     renderNewPatientForm();
@@ -37,6 +63,7 @@ window.addEventListener("load", () => {
     <img src="./src/perri.jpeg" alt="patient">
     <div class="user">
     <h3> <input type="text" name="name" placeholder="name"> <input type="text" name="lastName" placeholder="lastName"></h3>
+    <h3> <input type="email" name="email" placeholder="email"></h3>
     <p> <input type="text" name="dni" placeholder="dni" ></p>
     <div class="editButtons">
     <button class="save_new">Save New</button>
@@ -45,16 +72,17 @@ window.addEventListener("load", () => {
     </div>`;
     address_space.innerHTML = `
     <h3>Address:</h3>
-  <p><i>Street: </i><input type="text" name="street" placeholder="street" </p>
+    <p><i>Street: </i><input type="text" name="street" placeholder="street" </p>
     <p><i>Number: </i><input type="text" name="door" placeholder="Number" </p>
-  <p><i>City: </i><input type="text" name="city" placeholder="city" </p>
-  <p><i>State: </i><input type="text" name="state" placeholder= "state"</p>`;
+    <p><i>City: </i><input type="text" name="city" placeholder="city" </p>
+    <p><i>State: </i><input type="text" name="state" placeholder= "state"</p>`;
     appointment_space.innerHTML = `
-  <h3>Appointments</h3>`;
+    <h3>Appointments</h3>`;
     document.querySelector(".save_new").addEventListener("click", () => {
       let newUser = {
         name: document.querySelector("input[name=name]").value,
         lastName: document.querySelector("input[name=lastName]").value,
+        email: document.querySelector("input[name=email]").value,
         dni: Number(document.querySelector("input[name=dni]").value),
         address: {
           street: document.querySelector("input[name=street]").value,
@@ -73,6 +101,7 @@ window.addEventListener("load", () => {
     <img src="./src/perri.jpeg" alt="patient">
     <div class="user">
     <h3> ${user.name} ${user.lastName} </h3>
+    <p> ${user.email} </p>
     <p> ${user.dni}</p>
     <button class="edit_profile">Edit Profile</button>
     </div>`;
@@ -88,6 +117,7 @@ window.addEventListener("load", () => {
     <img src="./src/perri.jpeg" alt="patient">
     <div class="user">
     <h3> <input type="text" name="name" value=${usertemp.name}> <input type="text" name="lastName" value=${usertemp.lastName}></h3>
+    <h3> <input type="email" name="email" value=${usertemp.email}></h3>
     <p> <input type="text" name="dni" value=${usertemp.dni} ></p>
     <div class="editButtons">
     <button class="save_profile">Save Changes</button>
@@ -106,6 +136,7 @@ window.addEventListener("load", () => {
         patient_id: usertemp.patient_id,
         name: document.querySelector("[name=name]").value,
         lastName: document.querySelector("[name=lastName]").value,
+        email: document.querySelector("[name=email]").value,
         dni: Number(document.querySelector("[name=dni]").value),
         address: {
           street: document.querySelector("[name=street]").value,
@@ -132,7 +163,7 @@ window.addEventListener("load", () => {
   <p><i>State: </i>${user.address.state}</p>`;
   };
 
-  const renderAppointments = (appointments) => {
+  /* const renderAppointments = (appointments) => {
     appointment_space.innerHTML = `
   <h3>Appointments</h3>
   <lu class= "appo_list"> </lu>`;
@@ -147,8 +178,8 @@ window.addEventListener("load", () => {
       } Dentist: ${appointment.dentist.name}
     </li>`;
     });
-  };
-  const renderAllPatients = (patients) => {
+  }; */
+  /*   const renderAllPatients = (patients) => {
     patients.forEach((patient) => {
       allPatients_space.innerHTML += `
     <li><button class="patient-btn" id=${patient.patient_id}>${patient.name} ${patient.lastName} -- DNI: ${patient.dni}</button></li>`;
@@ -158,7 +189,7 @@ window.addEventListener("load", () => {
         getUserData(e.target.id);
       });
     });
-  };
+  }; */
 
   const getUserData = (id) => {
     let settings = {
@@ -184,6 +215,31 @@ window.addEventListener("load", () => {
         console.log(sessionStorage.getItem("user"));
       });
   };
+  //get users by email
+  const getPatientByEmail = (email) => {
+    let settings = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+    };
+    fetch(urlRoot + "patient/email=" + email, settings)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error(response.statusText);
+      })
+      .then((user) => {
+        sessionStorage.clear();
+        sessionStorage.setItem("user", JSON.stringify(user));
+        console.log(user);
+        renderUserData(JSON.parse(sessionStorage.getItem("user")));
+        renderAddressData(JSON.parse(sessionStorage.getItem("user")));
+        getAppointment(user.patient_id);
+        console.log(sessionStorage.getItem("user"));
+      });
+  };
 
   const getAppointment = (id) => {
     let settings = {
@@ -201,7 +257,7 @@ window.addEventListener("load", () => {
       })
       .then((appointments) => {
         console.log(appointments);
-        renderAppointments(appointments);
+        renderAppointmentsTable(appointments);
       });
   };
 
@@ -221,7 +277,7 @@ window.addEventListener("load", () => {
       })
       .then((patients) => {
         console.log(patients);
-        renderAllPatients(patients);
+        renderTableAllPatients(patients);
       });
   };
 
@@ -250,30 +306,95 @@ window.addEventListener("load", () => {
         console.log(sessionStorage.getItem("user"));
       });
   };
-const postNewPatient = (newData) => {
-  let settings = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json; charset=UTF-8",
-    },
-    body: JSON.stringify(newData),
+  const postNewPatient = (newData) => {
+    let settings = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify(newData),
+    };
+    fetch(urlRoot + "patient/add", settings)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error(response.statusText);
+      })
+      .then((user) => {
+        sessionStorage.clear();
+        sessionStorage.setItem("user", JSON.stringify(user));
+        console.log(user);
+        renderUserData(JSON.parse(sessionStorage.getItem("user")));
+        renderAddressData(JSON.parse(sessionStorage.getItem("user")));
+        getAppointment(user.patient_id);
+        console.log(sessionStorage.getItem("user"));
+      });
   };
-  fetch(urlRoot + "patient/add", settings)
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-      throw new Error(response.statusText);
-    })
-    .then((user) => {
-      sessionStorage.clear();
-      sessionStorage.setItem("user", JSON.stringify(user));
-      console.log(user);
-      renderUserData(JSON.parse(sessionStorage.getItem("user")));
-      renderAddressData(JSON.parse(sessionStorage.getItem("user")));
-      getAppointment(user.patient_id);
-      console.log(sessionStorage.getItem("user"));
-    });
-}
 
+  //render Appointments Table
+
+  const renderAppointmentsTable = (apps) => {
+    appointment_space.innerHTML = `
+  <h3>Appointments</h3>
+  <table class="appo_table appo_list">
+  <tr>
+    <th>Date</th> 
+     <th>Hour</th>
+    <th>Dentist</th>
+    <th>Price</th>
+  
+  </tr>
+  </table>`;
+
+    apps.forEach((appointment) => {
+      const appo_table = document.querySelector(".appo_table");
+      appo_table.innerHTML += `
+    <tr>
+    <td>${new Date(appointment.date).toLocaleDateString()}</td>
+    <td>${new Date(appointment.date).getHours()}:${new Date(
+        appointment.date
+      ).getMinutes()}</td>
+    <td>${appointment.dentist.name}</td>
+    <td>$${appointment.price}</td>
+   
+    </tr>`;
+    });
+  };
+
+  //render Table All patients
+  const renderTableAllPatients = (patients) => {
+    allPatients_space.innerHTML = `
+  <table class="allPatients_table">
+  <tr>
+  <th></th>
+    <th>Name</th> 
+    <th>Last Name</th>
+    <th>DNI</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Date Init</th>
+  </tr>
+  </table>`;
+    patients.forEach((patient) => {
+      const allPatients_table = document.querySelector(".allPatients_table");
+      allPatients_table.innerHTML += `
+    <tr> 
+   <td class="btn-td"> <button id=${
+     patient.patient_id
+   } class="patient-btn">✔</button></td>
+    <td>${patient.name}</td>
+    <td>${patient.lastName}</td>
+    <td>${patient.dni}</td>
+    <td>${patient.email}</td>
+    <td>${patient.address.street} ${patient.address.door}</td>
+    <td>${new Date(patient.dateInit).toLocaleDateString()}</td>
+    </tr>`;
+    });
+    document.querySelectorAll(".patient-btn").forEach((patient) => {
+      patient.addEventListener("click", (e) => {
+        getUserData(e.target.id);
+      });
+    });
+  };
 });

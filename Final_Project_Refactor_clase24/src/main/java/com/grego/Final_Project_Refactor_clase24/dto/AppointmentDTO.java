@@ -10,11 +10,9 @@ import java.util.Date;
 public class AppointmentDTO {
 
     private PatientDTO patient;
-
     private DentistDTO dentist;
-
-
     private Date date;
+    private Double price;
 
 
     public AppointmentDTO() {

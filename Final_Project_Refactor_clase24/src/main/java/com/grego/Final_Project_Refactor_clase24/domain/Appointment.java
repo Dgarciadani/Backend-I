@@ -28,6 +28,7 @@ public class Appointment {
     private Patient patient;
 
     private Date date;
+    private Double price;
 
     public Appointment() {
     }

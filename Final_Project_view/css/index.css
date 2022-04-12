@@ -38,6 +38,13 @@ button:hover {
   background-color: #4f46ba;
   color: #f7f9fb;
 }
+
+.active {
+  background-color: #4f46ba;
+  color: #f7f9fb;
+
+}
+
 header input {
   background-color: f7f9fb;
   color: #302125;
@@ -166,10 +173,27 @@ main {
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
-.appo_list li {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.appo_table th {
+  padding-top: 100px;
+  padding: 10px;
+  margin-top: 100px;
+  margin-bottom: 100px;
   color: #fcf8f4;
+  font-family: fenwick, sans-serif;
+}
+.appo_table tr{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  color: #fcf8f4;
+  font-family: fenwick, sans-serif;
+}
+.appo_table td {
+  margin-top: 20px;
+  margin-bottom: 120px;
+  color: #fcf8f4;
+  font-family: fenwick, sans-serif;
+  font-weight: 300;
+  font-style: italic;
 }
 footer {
   margin-top: 30px;
@@ -235,4 +259,30 @@ footer button:hover {
 #X:hover {
   background-color: #ca3d3d;
   color: #f7f9fb;
+}
+footer th {
+  color: #fcf8f4;
+  font-family: fenwick, sans-serif;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+footer td {
+  color: #fcf8f4;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-family: fenwick, sans-serif;
+  font-style: italic;
+}
+table button {
+  max-width: 30px;
+  margin-right: 40px;
+}
+.btn-td {
+  /* background-color: red; */
+  align-items: right;
+  text-align: right;
+  justify-content: right;
 }
