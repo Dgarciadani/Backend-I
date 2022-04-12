@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/patient")
-
+@CrossOrigin(origins = "*")
 public class PatientController {
 
     @Autowired
     private PatientService patientService;
+
 
     @GetMapping("/id={id}")
     public ResponseEntity<PatientDTO> findById(@PathVariable Integer id) {

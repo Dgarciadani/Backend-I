@@ -16,7 +16,6 @@ import java.util.Set;
 
 public class PatientDTO {
 
-    @JsonBackReference
     private Integer patient_id;
 
     private String name;

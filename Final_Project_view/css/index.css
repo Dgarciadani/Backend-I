@@ -1,0 +1,237 @@
+@import url("https://use.typekit.net/hdb4hwe.css");
+
+body {
+  background-color: #e5e9f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: fenwick, sans-serif;
+}
+
+header {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.search {
+  display: flex;
+}
+
+header button {
+  background-color: f7f9fb;
+  color: #302125;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 8px;
+  transition: 0.3s;
+  width: 150px;
+  font-family: fenwick, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+button:hover {
+  background-color: #4f46ba;
+  color: #f7f9fb;
+}
+header input {
+  background-color: f7f9fb;
+  color: #302125;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 80%;
+  color: #000;
+}
+.container_patient {
+  height: 100%;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+.container_patient input {
+  border: 1px solid #e5e9f8;
+  border-radius: 5px;
+  font-family: fenwick, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.user_data {
+  display: flex;
+  justify-content: space-around;
+}
+.user_data i {
+  color: #80787b;
+  font-family: fenwick, sans-serif;
+  font-weight: 200;
+}
+.user_data p {
+  color: #000;
+  font-style: normal;
+}
+.profile_data {
+  /* background-color: rebeccapurple; */
+  display: flex;
+  flex-direction: c;
+  align-items: center;
+  margin: 50px;
+  margin-top: 60px;
+  margin-left: 70px;
+  transition: 0.3s;
+}
+.profile_data img {
+  margin: 10px;
+  margin-bottom: 50px;
+  max-width: 110px;
+  max-height: 110px;
+  border-radius: 100%;
+}
+.user p {
+  color: #a3a0a1;
+  font-family: fenwick, sans-serif;
+  font-weight: 10px;
+  font-style: italic;
+  margin-top: -15px;
+  margin-left: 5px;
+}
+.user {
+  margin: 10px;
+  /* background-color: #302125; */
+}
+.user button {
+  background-color: f7f9fb;
+  color: #302125;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+  transition: 0.3s;
+  margin-left: 10px;
+  width: 150px;
+  font-family: fenwick, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.user button:hover {
+  background-color: #4f46ba;
+  color: #f7f9fb;
+}
+.address_data {
+  /* background-color: skyblue; */
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  transition: 0.3s;
+}
+
+.appointments_data {
+  background-color: #f7f9fb;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 40%;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.appo_list {
+  list-style: none;
+  width: 80%;
+  max-height: 80%;
+  border: 1px solid #302125;
+  border-radius: 10px;
+  text-align: left;
+  background-color: #4f46ba;
+  margin-bottom: 50px;
+  align-items: center;
+  text-align: center;
+  transition: 0.3s;
+}
+.appo_list li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #fcf8f4;
+}
+footer {
+  margin-top: 30px;
+  width: 80%;
+  transition: 0.3s;
+}
+footer h3 {
+  color: white;
+}
+footer button {
+  background: rgba(241, 241, 241, 0.5);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 8px;
+  transition: 0.3s;
+  width: 150px;
+  font-family: fenwick, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+footer button:hover {
+  background-color: #f9896b;
+  color: #f7f9fb;
+}
+.Search-all {
+  background-color: #4f46ba;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  transition: 1s;
+}
+.all-list button {
+  width: 100%;
+}
+.all-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* background-color:red; */
+  width: 100%;
+  margin-left: -40px;
+}
+.editButtons{
+  display: flex;
+}
+.editButtons button{
+  margin-top: 1px;
+  margin-left: 1px;
+}
+
+#X{
+   width: 30px;
+   transition: 0.3s;
+   border-radius: 12px;
+}
+#X:hover{
+  background-color: #ca3d3d;
+  color: #f7f9fb;
+
+}

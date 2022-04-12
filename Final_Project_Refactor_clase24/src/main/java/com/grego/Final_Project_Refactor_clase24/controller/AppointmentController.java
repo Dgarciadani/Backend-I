@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/appointment")
+@CrossOrigin(origins = "*")
 public class AppointmentController {
 
     @Autowired
@@ -39,5 +40,16 @@ public class AppointmentController {
     public ResponseEntity<Iterable<AppointmentDTO>> findAllAppointments() {
         return ResponseEntity.ok(appointmentService.findAll());
     }
+
+    @GetMapping("/dentist={id}")
+    public ResponseEntity<Iterable<AppointmentDTO>> findAllAppointmentsByDentistId(@PathVariable Integer id) {
+        return ResponseEntity.ok(appointmentService.findByDentistId(id));
+    }
+
+    @GetMapping("/patient={id}")
+    public ResponseEntity<Iterable<AppointmentDTO>> findAllAppointmentsByPatientId(@PathVariable Integer id) {
+        return ResponseEntity.ok(appointmentService.findByPatientId(id));
+    }
+
 }
 

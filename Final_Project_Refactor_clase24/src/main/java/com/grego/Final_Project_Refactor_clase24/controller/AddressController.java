@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/address")
+@CrossOrigin(origins = "*")
 public class AddressController {
 
     @Autowired

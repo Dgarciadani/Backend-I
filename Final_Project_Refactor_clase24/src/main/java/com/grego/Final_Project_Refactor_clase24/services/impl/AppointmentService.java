@@ -50,6 +50,13 @@ public class AppointmentService implements IAppointmentService {
     public List<AppointmentDTO> findAll() {
         return appointmentRepository.findAll().stream().map(this::mapToDTO).collect(java.util.stream.Collectors.toList());
     }
+    public List<AppointmentDTO> findByPatientId(Integer id){
+        return appointmentRepository.findByPatientId(id).stream().map(this::mapToDTO).collect(java.util.stream.Collectors.toList());
+    }
+    public List<AppointmentDTO> findByDentistId(Integer id){
+        return appointmentRepository.findByDentistId(id).stream().map(this::mapToDTO).collect(java.util.stream.Collectors.toList());
+    }
+
 
     //----Mapper----
     public AppointmentDTO mapToDTO(Appointment appointment) {

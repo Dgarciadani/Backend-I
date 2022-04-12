@@ -14,6 +14,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/dentist")
+@CrossOrigin(origins = "*")
 public class DentistController {
 
     @Autowired

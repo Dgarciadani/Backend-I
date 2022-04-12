@@ -17,7 +17,6 @@ import java.util.Set;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DentistDTO {
 
-    @JsonBackReference
     private Integer dentist_id;
     private String name;
     private String lastName;
