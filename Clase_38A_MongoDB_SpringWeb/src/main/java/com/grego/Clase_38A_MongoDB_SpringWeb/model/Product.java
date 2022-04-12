@@ -3,6 +3,9 @@ package com.grego.Clase_38A_MongoDB_SpringWeb.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 @Document(collection = "products")
 public class Product {
     @Id
