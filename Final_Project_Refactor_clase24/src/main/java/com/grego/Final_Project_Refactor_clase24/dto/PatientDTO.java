@@ -17,9 +17,9 @@ import java.util.Set;
 public class PatientDTO {
 
     private Integer patient_id;
-
     private String name;
     private String lastName;
+    private String email;
     private Integer dni;
     @OneToOne(mappedBy = "patient", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private AddressDTO address;

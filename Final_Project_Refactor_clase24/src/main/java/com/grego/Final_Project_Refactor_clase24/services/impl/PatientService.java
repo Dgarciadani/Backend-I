@@ -54,31 +54,10 @@ public class PatientService implements IPatientService {
     public List<PatientDTO> findByName(String name) {
         return patientRepository.findByName(name).stream().map(this::mapToDTO).collect(java.util.stream.Collectors.toList());
     }
-/*    public PatientDTO getPatient(Integer id) {
-        PatientDTO patientDTO = null;
-        Optional<Patient> patient = patientRepository.findById(id);
-        if (patient.isPresent()) {
-            patientDTO = objectMapper.convertValue(patient.get(), PatientDTO.class);
 
-        }
-        return patientDTO;
+    public PatientDTO findByEmail(String email) {
+        return patientRepository.findByEmail(email).map(this::mapToDTO).orElse(null);
     }
-
-    public Patient savePatient(Patient patient) {
-        return patientRepository.save(patient);
-    }
-
-    public void deletePatient(Integer id) {
-        Optional<Patient> patient = patientRepository.findById(id);
-        if (patient.isPresent()) {
-            patientRepository.deleteById(id);
-        }
-    }
-
-
-    public List<PatientDTO> getAllPatients() {
-        return null;
-    }*/
 
     //-----Mapper-----
     public PatientDTO mapToDTO(Patient patient) {

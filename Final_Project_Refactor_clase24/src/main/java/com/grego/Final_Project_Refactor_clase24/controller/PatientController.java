@@ -47,5 +47,10 @@ public class PatientController {
     public ResponseEntity<Iterable<PatientDTO>> findByName(@PathVariable String name) {
         return ResponseEntity.ok(patientService.findByName(name));
     }
+
+    @GetMapping("/email={email}")
+    public ResponseEntity<PatientDTO> findByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(patientService.findByEmail(email));
+    }
 }
 

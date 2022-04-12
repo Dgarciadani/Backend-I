@@ -27,7 +27,8 @@ header button {
   border-radius: 15px;
   padding: 10px;
   margin: 8px;
-  transition: 0.3s;
+  transition: all 0.2s ease-in-out;
+  /* transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
   width: 150px;
   font-family: fenwick, sans-serif;
   font-weight: 300;
@@ -61,14 +62,15 @@ main {
   /* background-color: red; */
   display: flex;
   justify-content: space-between;
-  transition: 0.3s;
+  transition: all 0.2s ease-in-out;
 }
 .container_patient input {
   border: 1px solid #e5e9f8;
   border-radius: 5px;
   font-family: fenwick, sans-serif;
-  font-weight: 300;
-  font-style: normal;
+  font-weight: 400;
+  font-style: bold;
+  height: 25px;
 }
 
 .user_data {
@@ -92,7 +94,7 @@ main {
   margin: 50px;
   margin-top: 60px;
   margin-left: 70px;
-  transition: 0.3s;
+  transition: all 0.2s ease-in-out;
 }
 .profile_data img {
   margin: 10px;
@@ -120,7 +122,7 @@ main {
   border-radius: 15px;
   padding: 10px;
   margin: 10px;
-  transition: 0.3s;
+  transition: all 0.2s ease-in-out;
   margin-left: 10px;
   width: 150px;
   font-family: fenwick, sans-serif;
@@ -138,7 +140,7 @@ main {
   align-items: left;
   margin-top: 20px;
   margin-bottom: 50px;
-  transition: 0.3s;
+  transition: all 0.2s ease-in-out;
 }
 
 .appointments_data {
@@ -162,7 +164,7 @@ main {
   margin-bottom: 50px;
   align-items: center;
   text-align: center;
-  transition: 0.3s;
+  transition: all 0.2s ease-in-out;
 }
 .appo_list li {
   margin-top: 10px;
@@ -172,7 +174,7 @@ main {
 footer {
   margin-top: 30px;
   width: 80%;
-  transition: 0.3s;
+  transition: all 0.2s ease-in-out;
 }
 footer h3 {
   color: white;
@@ -184,7 +186,7 @@ footer button {
   border-radius: 10px;
   padding: 10px;
   margin: 8px;
-  transition: 0.3s;
+  transition: all 0.2s ease-in-out;
   width: 150px;
   font-family: fenwick, sans-serif;
   font-weight: 300;
@@ -217,21 +219,20 @@ footer button:hover {
   width: 100%;
   margin-left: -40px;
 }
-.editButtons{
+.editButtons {
   display: flex;
 }
-.editButtons button{
+.editButtons button {
   margin-top: 1px;
   margin-left: 1px;
 }
 
-#X{
-   width: 30px;
-   transition: 0.3s;
-   border-radius: 12px;
+#X {
+  width: 30px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 12px;
 }
-#X:hover{
+#X:hover {
   background-color: #ca3d3d;
   color: #f7f9fb;
-
 }

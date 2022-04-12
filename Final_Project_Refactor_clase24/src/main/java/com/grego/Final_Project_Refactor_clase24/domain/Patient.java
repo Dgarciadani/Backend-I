@@ -33,6 +33,7 @@ public class Patient {
     private Address address;
 
     private Integer dni;
+    private String email;
 
     private Date dateInit;
 
