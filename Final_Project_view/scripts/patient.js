@@ -95,6 +95,9 @@ window.addEventListener("load", () => {
       console.log(newUser);
       postNewPatient(newUser);
     });
+    document.querySelector(".save_cancel").addEventListener("click", () => {
+      getUserData(JSON.parse(sessionStorage.getItem("user")).patient_id)
+    });
   };
   const renderUserData = (user) => {
     profile_space.innerHTML = `
@@ -352,11 +355,9 @@ window.addEventListener("load", () => {
       appo_table.innerHTML += `
     <tr>
     <td>${new Date(appointment.date).toLocaleDateString()}</td>
-    <td>${new Date(appointment.date).getHours()}:${new Date(
-        appointment.date
-      ).getMinutes()}</td>
+    <td>${new Date(appointment.date).toLocaleTimeString()}</td>
     <td>${appointment.dentist.name}</td>
-    <td>$${appointment.price}</td>
+    <td>$${appointment.price==null? "0": appointment.price}</td>
    
     </tr>`;
     });

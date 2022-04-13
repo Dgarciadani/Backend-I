@@ -8,7 +8,7 @@ import java.util.Date;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppointmentDTO {
-
+    private Integer appointment_id;
     private PatientDTO patient;
     private DentistDTO dentist;
     private Date date;
