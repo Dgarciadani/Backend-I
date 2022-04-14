@@ -29,7 +29,9 @@ window.addEventListener("load", () => {
   newAppointmentBtn.addEventListener("click", () => {
     getAllDentists();
     getAllPatients();
-    renderNewPatientForm();
+    setTimeout(() => {
+      renderNewPatientForm();
+    }, 100);
   });
 
   findAllBtn.addEventListener("click", () => {
@@ -69,11 +71,66 @@ window.addEventListener("load", () => {
 
   const renderAppointmentData = (appointment) => {
     appointment_space.innerHTML = `
-    <h4>Appointments data</h4>
+    <h4>Appointment data</h4>
     <p><i>Date:</i> ${new Date(appointment.date).toLocaleDateString()}</p>
-    <p><i>Time:</i> ${new Date(appointment.date).toLocaleTimeString()}</p>
+    <p><i>Time:</i> ${new Date(appointment.date).toLocaleTimeString("en-GB",{
+      hour: "2-digit",
+      minute: "2-digit"
+    })}</p>
     <p><i>Price:</i>$${appointment.price == null ? "0" : appointment.price}</p>
+    <button class="btn-edit">Edit</button>
     `;
+    const editBtn = document.querySelector(".btn-edit");
+    editBtn.addEventListener("click", () => {
+      getAllDentists();
+      getAllPatients();
+      setTimeout(() => {
+        renderEditForm();
+      }, 100);
+    });
+  };
+
+  const renderEditForm = () => {
+    let apptemp = JSON.parse(sessionStorage.getItem("appointment"));
+    console.log();
+    console.log(apptemp);
+    dentist_space.innerHTML = `
+    <h4>Select Dentist</h4>
+    <select class="dentist-select">
+    ${JSON.parse(sessionStorage.getItem("dentists")).map((dentis) => {
+      if (dentis.dentist_id === apptemp.dentist.dentist_id) {
+        return `<option value="${dentis.dentist_id}" selected>${dentis.name} ${dentis.lastName}</option>`;
+      } else {
+        return `<option value="${dentis.dentist_id}" >${dentis.name} ${dentis.lastName}</option>`;
+      }
+    })}
+    </select>
+`;
+
+    patient_space.innerHTML = `
+    <h4>Patient Data</h4>
+    <select class="patient-select">
+    ${JSON.parse(sessionStorage.getItem("patients")).map((patient) => {
+      if (patient.patient_id === apptemp.patient.patient_id) {
+        return `<option value="${patient.patient_id}" selected>${patient.name} ${patient.lastName}</option>`;
+      } else {
+        return `<option value=${patient.patient_id}>${patient.name} ${patient.lastName}</option>`;
+      }
+    })}
+    </select>`;
+
+    appointment_space.innerHTML = `
+    <h4>Appointment data</h4>
+    <form class="appointment-form">
+    <input type="date" name="date" id="date" required value=${new Date(apptemp.date).toISOString().split("T")[0]}>
+    <input type="time" name="time" id="time" required value=${new Date(apptemp.date).toLocaleTimeString("en-GB",{
+      hour: "2-digit",
+      minute: "2-digit"
+    })}>
+    <input type="number" name="price" id="price" step=".01" required value=${
+      apptemp.price
+    }>
+    <button type="submit" class="btn-submit">Save Appointment</button>`;
   };
 
   const renderNewPatientForm = () => {
@@ -101,7 +158,7 @@ window.addEventListener("load", () => {
       console.log(e.target.value);
     });
     appointment_space.innerHTML = `
-        <h4>Appointments data</h4>
+        <h4>Appointment data</h4>
         <form class="appointment-form">
         <input type="date" name="date" id="date" required>
         <input type="time" name="time" id="time" required>
@@ -213,7 +270,10 @@ window.addEventListener("load", () => {
 <td>${appointment.patient.name} ${appointment.patient.lastName}</td>
 <td>${appointment.dentist.name} ${appointment.dentist.lastName}</td>
 <td>${new Date(appointment.date).toLocaleDateString()}</td>
-<td>${new Date(appointment.date).toLocaleTimeString()}</td>
+<td>${new Date(appointment.date).toLocaleTimeString("en-GB",{
+  hour: "2-digit",
+  minute: "2-digit"
+})}</td>
 <td>$${appointment.price == null ? "0" : appointment.price}</td>
 </tr>`;
     });
@@ -265,9 +325,9 @@ window.addEventListener("load", () => {
         throw new Error(response.statusText);
       })
       .then((appointment) => {
-          sessionStorage.clear();
-            sessionStorage.setItem("appointment", JSON.stringify(appointment));
-            getAppointmentById(appointment.appointment_id);
+        sessionStorage.clear();
+        sessionStorage.setItem("appointment", JSON.stringify(appointment));
+        getAppointmentById(appointment.appointment_id);
 
         console.log(appointment);
         getAllAppointments();
