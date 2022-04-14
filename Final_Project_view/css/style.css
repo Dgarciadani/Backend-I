@@ -1,0 +1,44 @@
+@import url("https://use.typekit.net/hdb4hwe.css");
+
+
+
+body {
+  background-image: url(../src/main.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    height: 100vh;
+
+}
+body h3{
+    font-family: fenwick, sans-serif;
+    font-weight: 800;
+    font-style: bold;
+    font-size: 30px;
+    color: #e0dedf;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+body button{
+    background-color: rgb(219, 216, 216);
+    color: #303132;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    transition: all 0.2s ease-in-out;
+    /* transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+    width: 150px;
+    font-family: fenwick, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+body button:hover{
+    background-color: #3699d3;
+    color: #f7f9fb;
+}

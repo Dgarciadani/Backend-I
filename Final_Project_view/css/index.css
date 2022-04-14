@@ -1,7 +1,7 @@
 @import url("https://use.typekit.net/hdb4hwe.css");
 
 body {
-  background-color: #e5e9f8;
+  background-color: #91C5E3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@ header {
 }
 
 header button {
-  background-color: f7f9fb;
+  background-color: #f7f9fb;
   color: #302125;
   border: none;
   border-radius: 15px;
@@ -35,18 +35,18 @@ header button {
   font-style: normal;
 }
 button:hover {
-  background-color: #4f46ba;
-  color: #f7f9fb;
+  background-color: #1F628C;
+  color: #ffffff;
 }
 
 .active {
-  background-color: #4f46ba;
-  color: #f7f9fb;
+  background-color: #1F628C;
+  color: #ffffff;
 
 }
 
 header input {
-  background-color: f7f9fb;
+  background-color: #f7f9fb;
   color: #302125;
   border: none;
   border-radius: 15px;
@@ -137,7 +137,7 @@ main {
   font-style: normal;
 }
 .user button:hover {
-  background-color: #4f46ba;
+  background-color: #1F628C;
   color: #f7f9fb;
 }
 .address_data {
@@ -164,11 +164,15 @@ main {
   list-style: none;
   width: 80%;
   max-height: 80%;
-  border: 1px solid #302125;
+  border: none;
   border-radius: 10px;
   text-align: left;
-  background-color: #4f46ba;
+  background-color: #659DBF;
   margin-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
   align-items: center;
   text-align: center;
   transition: all 0.2s ease-in-out;
@@ -194,6 +198,7 @@ main {
   font-family: fenwick, sans-serif;
   font-weight: 300;
   font-style: italic;
+  padding-top: 10px;
 }
 footer {
   margin-top: 30px;
@@ -217,11 +222,11 @@ footer button {
   font-style: normal;
 }
 footer button:hover {
-  background-color: #f9896b;
+  background-color: #1F628C;
   color: #f7f9fb;
 }
 .Search-all {
-  background-color: #4f46ba;
+  background-color: #659DBF;
   border-radius: 10px;
   display: flex;
   justify-content: center;

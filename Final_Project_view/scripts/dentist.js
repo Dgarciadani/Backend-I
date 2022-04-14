@@ -304,7 +304,10 @@ window.addEventListener("load", () => {
       appo_table.innerHTML += `
     <tr>
     <td>${new Date(appointment.date).toLocaleDateString()}</td>
-    <td>${new Date(appointment.date).toLocaleTimeString()}</td>
+    <td>${new Date(appointment.date).toLocaleTimeString("en-GB",{
+      hour: "2-digit",
+      minute: "2-digit"
+    })}</td>
     <td>${appointment.patient.name}</td>
     <td>$${appointment.price==null? "0": appointment.price}</td>
    
