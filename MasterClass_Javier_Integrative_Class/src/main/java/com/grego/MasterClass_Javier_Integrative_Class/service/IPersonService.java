@@ -6,12 +6,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service
 public interface IPersonService {
- PersonDTO savePerson(PersonDTO personDTO);
- PersonDTO findPersonById(Integer id);
- void UpdatePerson(Integer id,PersonDTO personDTO);
- void deletePerson(Integer id);
- Set<PersonDTO> findAll();
+
+    PersonDTO savePerson(PersonDTO personDTO);
+
+    PersonDTO findPersonById(Integer id);
+
+    void UpdatePerson(Integer id, PersonDTO personDTO);
+
+    void deletePerson(Integer id);
+
+    Set<PersonDTO> findAll();
 
 }
