@@ -34,7 +34,7 @@ public class PersonService implements IPersonService {
     }
 
     @Override
-    public void UpdatePerson(Integer id, PersonDTO personDTO) {
+    public void updatePerson(Integer id, PersonDTO personDTO) {
         if (personRepository.findById(id).isPresent()) {
         Person person = modelmapper.map(personDTO, Person.class);
         person.setId(id);

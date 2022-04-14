@@ -5,14 +5,16 @@ import com.grego.MasterClass_Javier_Integrative_Class.model.dtos.ProjectDTO;
 import com.grego.MasterClass_Javier_Integrative_Class.repository.IProjectRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
-
+@Service
 public class ProjectService implements IProjectService {
     @Autowired
     private IProjectRepository projectRepository;
+
     @Autowired
     private ModelMapper modelMapper;
 
@@ -28,7 +30,7 @@ public class ProjectService implements IProjectService {
     }
 
     @Override
-    public void UpdateProject(Integer id, ProjectDTO projectDTO) {
+    public void updateProject(Integer id, ProjectDTO projectDTO) {
         Project project = toProject(projectDTO);
         project.setId(id);
         projectRepository.save(project);

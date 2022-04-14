@@ -9,7 +9,7 @@ public interface IProjectService {
 
     ProjectDTO findProjectById(Integer id);
 
-    void UpdateProject(Integer id, ProjectDTO projectDTO);
+    void updateProject(Integer id, ProjectDTO projectDTO);
 
     void deleteProject(Integer id);
 

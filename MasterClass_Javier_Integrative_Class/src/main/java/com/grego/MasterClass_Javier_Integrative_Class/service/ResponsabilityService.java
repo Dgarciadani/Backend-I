@@ -5,10 +5,11 @@ import com.grego.MasterClass_Javier_Integrative_Class.model.dtos.ResponsabilityD
 import com.grego.MasterClass_Javier_Integrative_Class.repository.IResponsabilityRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 import java.util.stream.Collectors;
-
+@Service
 public class ResponsabilityService implements IResponsabilityService {
     @Autowired
     private IResponsabilityRepository responsabilityRepository;
@@ -29,7 +30,7 @@ public class ResponsabilityService implements IResponsabilityService {
     }
 
     @Override
-    public void UpdateResponsability(Integer id, ResponsabilityDTO responsabilityDTO) {
+    public void updateResponsability(Integer id, ResponsabilityDTO responsabilityDTO) {
         Responsability responsability = convertToEntity(responsabilityDTO);
         responsability.setId(id);
         responsabilityRepository.save(responsability);

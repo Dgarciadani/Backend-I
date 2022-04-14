@@ -10,7 +10,7 @@ public interface IResponsabilityService {
 
     ResponsabilityDTO findResponsabilityById(Integer id);
 
-    void UpdateResponsability(Integer id, ResponsabilityDTO responsabilityDTO);
+    void updateResponsability(Integer id, ResponsabilityDTO responsabilityDTO);
 
     void deleteResponsability(Integer id);
 

@@ -1,15 +1,16 @@
 package com.grego.MasterClass_Javier_Integrative_Class.model;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 @Data
 @Entity
 @Table(name = "responsabilities")
 public class Responsability {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String rol;
