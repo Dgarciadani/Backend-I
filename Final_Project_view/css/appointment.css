@@ -1,7 +1,7 @@
 @import url("https://use.typekit.net/hdb4hwe.css");
 
 body {
-  background-color: #91C5E3;
+  background-color: #91c5e3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,14 +35,13 @@ header button {
   font-style: normal;
 }
 button:hover {
-  background-color: #1F628C;
+  background-color: #1f628c;
   color: #ffffff;
 }
 
 .active {
-  background-color: #1F628C;
+  background-color: #1f628c;
   color: #ffffff;
-
 }
 
 header input {
@@ -138,10 +137,9 @@ main {
   font-style: normal;
 }
 .dentist-data button:hover {
-  background-color: #659DBF;
+  background-color: #659dbf;
   color: #f7f9fb;
 }
-
 
 .appointments_data {
   background-color: #f7f9fb;
@@ -161,11 +159,15 @@ main {
   border: 1px solid #302125;
   border-radius: 10px;
   text-align: left;
-  background-color: #659DBF;
+  background-color: #659dbf;
   margin-bottom: 50px;
   align-items: center;
   text-align: center;
   transition: all 0.2s ease-in-out;
+}
+
+.appo_table {
+  border: none;
 }
 .appo_table th {
   padding-top: 100px;
@@ -175,7 +177,7 @@ main {
   color: #fcf8f4;
   font-family: fenwick, sans-serif;
 }
-.appo_table tr{
+.appo_table tr {
   margin-top: 100px;
   margin-bottom: 100px;
   color: #fcf8f4;
@@ -211,11 +213,11 @@ footer button {
   font-style: normal;
 }
 footer button:hover {
-  background-color: #1F628C;
+  background-color: #1f628c;
   color: #f7f9fb;
 }
 .Search-all {
-  background-color: #659DBF;
+  background-color: #659dbf;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -245,15 +247,7 @@ footer button:hover {
   margin-left: 1px;
 }
 
-#X {
-  width: 30px;
-  transition: all 0.2s ease-in-out;
-  border-radius: 12px;
-}
-#X:hover {
-  background-color: #ca3d3d;
-  color: #f7f9fb;
-}
+
 footer th {
   color: #fcf8f4;
   font-family: fenwick, sans-serif;
@@ -280,7 +274,7 @@ table button {
   text-align: right;
   justify-content: right;
 }
-.appointment_data{
+.appointment_data {
   display: flex;
   align-items: center;
   text-align: center;
@@ -289,7 +283,21 @@ table button {
   transition: all 0.2s ease-in-out;
   /* background-color:red */
 }
-.patient-data{
+.appointment_data button {
+  background-color: #659dbf;
+  color: #f7f9fb;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 10px;
+  transition: all 0.2s ease-in-out;
+  margin-left: 10px;
+  width: 150px;
+  font-family: fenwick, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.patient-data {
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -300,16 +308,36 @@ table button {
   width: 50%;
   margin-left: 80px;
 }
-.patient-data p{
-margin-top: 5px;
-
-}
-.dentist-data p{
+.patient-data p {
   margin-top: 5px;
-  
-  }
+}
+.dentist-data p {
+  margin-top: 5px;
+}
+.patient-data select {
+  border: none;
+  font-family: fenwick, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #659DBF;
+  color: white;
+}
+.dentist-data select {
+  border: none;
+  font-family: fenwick, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #659DBF;
+  color: white;
+}
 
-.dentist-data{
+.dentist-data {
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -319,13 +347,61 @@ margin-top: 5px;
   /* background-color:green; */
   width: 50%;
   margin-bottom: 40px;
-} 
-.app-data{
+}
+.app-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   margin-top: 30px;
-  background-color: #659DBF;
+  background-color: #659dbf;
   border-radius: 10px;
   padding-left: 20px;
   padding-right: 20px;
   color: white;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-
+.app-data button {
+  background-color: white;
+  color: rgb(39, 38, 38);
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 15px;
+  margin-left: 10px;
+  transition: all 0.2s ease-in-out;
+  margin-left: 10px;
+  min-width: 35px;
+  max-width: 180px;
+  font-family: fenwick, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin-bottom: 15px;
+}
+.app-data button:hover {
+  background-color: #1f628c;
+  color: #f7f9fb;
+}
+.app-data input {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  width: 100px;
+}
+.btn-group {
+  display: flex;
+  flex-direction: row;
+}
+#X {
+  width: 35px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 12px;
+}
+#X:hover {
+  background-color: #ca3d3d;
+  color: #f7f9fb;
+}
+.patient-btn button{
+  color:white;
+}

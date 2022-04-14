@@ -73,9 +73,9 @@ window.addEventListener("load", () => {
     appointment_space.innerHTML = `
     <h4>Appointment data</h4>
     <p><i>Date:</i> ${new Date(appointment.date).toLocaleDateString()}</p>
-    <p><i>Time:</i> ${new Date(appointment.date).toLocaleTimeString("en-GB",{
+    <p><i>Time:</i> ${new Date(appointment.date).toLocaleTimeString("en-GB", {
       hour: "2-digit",
-      minute: "2-digit"
+      minute: "2-digit",
     })}</p>
     <p><i>Price:</i>$${appointment.price == null ? "0" : appointment.price}</p>
     <button class="btn-edit">Edit</button>
@@ -122,15 +122,45 @@ window.addEventListener("load", () => {
     appointment_space.innerHTML = `
     <h4>Appointment data</h4>
     <form class="appointment-form">
-    <input type="date" name="date" id="date" required value=${new Date(apptemp.date).toISOString().split("T")[0]}>
-    <input type="time" name="time" id="time" required value=${new Date(apptemp.date).toLocaleTimeString("en-GB",{
+    <input type="date" name="date" id="date" required value=${
+      new Date(apptemp.date).toISOString().split("T")[0]
+    }>
+    <input type="time" name="time" id="time" required value=${new Date(
+      apptemp.date
+    ).toLocaleTimeString("en-GB", {
       hour: "2-digit",
-      minute: "2-digit"
+      minute: "2-digit",
     })}>
     <input type="number" name="price" id="price" step=".01" required value=${
       apptemp.price
     }>
-    <button type="submit" class="btn-submit">Save Appointment</button>`;
+    <div class="btn-group">
+    <button type="submit" class="btn-submit">Save Appointment</button>
+<button class="btn-cancel" id="X">X</button>
+</div>
+`;
+    const submitBtn = document.querySelector(".btn-submit");
+    submitBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      let newAppointment = {
+        //SELECT THE INPUT DATE AND TIME TO DO A NEW DATE OBJECT
+        date: new Date(
+          document.querySelector("#date").value +
+            " " +
+            document.querySelector("#time").value
+        ),
+        patient: { patient_id: document.querySelector(".patient-select").value },
+        dentist: { dentist_id: document.querySelector(".dentist-select").value },
+        price: document.querySelector("#price").value,
+      };
+      putAppointment(apptemp.appointment_id, newAppointment);
+    });
+
+    const cancelBtn = document.querySelector(".btn-cancel");
+    cancelBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      getAppointmentById(apptemp.appointment_id);
+    });
   };
 
   const renderNewPatientForm = () => {
@@ -163,8 +193,11 @@ window.addEventListener("load", () => {
         <input type="date" name="date" id="date" required>
         <input type="time" name="time" id="time" required>
         <input type="number" name="price" id="price" step=".01" required>
-        <button type="submit" class="btn-submit">Add Appointment</button>`;
-
+        <div class="btn-group">
+        <button type="submit" class="btn-submit">Add Appointment</button>
+        <button class="btn-cancel" id="X">X</button>
+</div>
+`;
     document.querySelector(".appointment-form").addEventListener("submit", (e) => {
       e.preventDefault();
       newAppointment = {
@@ -183,6 +216,13 @@ window.addEventListener("load", () => {
       };
       console.log(newAppointment);
       PostNewAppointment(newAppointment);
+    });
+    const cancelBtn = document.querySelector(".btn-cancel");
+    cancelBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      appointment_space.innerHTML = "";
+      dentist_space.innerHTML = "";
+      patient_space.innerHTML = "";
     });
   };
   const getAllDentists = () => {
@@ -270,10 +310,10 @@ window.addEventListener("load", () => {
 <td>${appointment.patient.name} ${appointment.patient.lastName}</td>
 <td>${appointment.dentist.name} ${appointment.dentist.lastName}</td>
 <td>${new Date(appointment.date).toLocaleDateString()}</td>
-<td>${new Date(appointment.date).toLocaleTimeString("en-GB",{
-  hour: "2-digit",
-  minute: "2-digit"
-})}</td>
+<td>${new Date(appointment.date).toLocaleTimeString("en-GB", {
+        hour: "2-digit",
+        minute: "2-digit",
+      })}</td>
 <td>$${appointment.price == null ? "0" : appointment.price}</td>
 </tr>`;
     });
@@ -331,6 +371,32 @@ window.addEventListener("load", () => {
 
         console.log(appointment);
         getAllAppointments();
+      });
+  };
+  const putAppointment = (id, newappointment) => {
+    let settings = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify(newappointment),
+    };
+    fetch(urlRoot + "appointment/id=" + id, settings)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error(response.statusText);
+      })
+      .then((appointment) => {
+        sessionStorage.clear();
+        sessionStorage.setItem("appointment", JSON.stringify(appointment));
+        getAppointmentById(appointment.appointment_id);
+        console.log(appointment);
+        getAllAppointments();
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 });

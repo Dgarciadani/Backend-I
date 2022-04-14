@@ -14,7 +14,6 @@ public class AppointmentDTO {
     private Date date;
     private Double price;
 
-
     public AppointmentDTO() {
 
     }
