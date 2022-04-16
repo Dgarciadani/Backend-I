@@ -15,7 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class FinalProjectRefactorClase24ApplicationTests {
 
-   /* @Autowired
+    @Autowired
     DentistService dentistService;
     @Autowired
     PatientService patientService;
@@ -28,9 +28,9 @@ class FinalProjectRefactorClase24ApplicationTests {
         dentistDTO.setName("Dentist");
         dentistDTO.setLastName("Dentist");
         dentistDTO.setRegister(465465);
-        dentistService.save(dentistDTO);
 
-        Assertions.assertNotNull(dentistService.findById(1));
+
+        Assertions.assertNotNull(dentistService.save(dentistDTO).getDentist_id());
 
     }
 
@@ -47,7 +47,7 @@ class FinalProjectRefactorClase24ApplicationTests {
         patientdto.setAddress(address);
         patientdto.setDni(123456789);
         patientdto.setDateInit(new java.sql.Date(new java.util.Date().getTime()));
-        patientService.save(patientdto);
+        Assertions.assertNotNull( patientService.save(patientdto).getPatient_id());
     }
 
     @Test
@@ -60,6 +60,71 @@ class FinalProjectRefactorClase24ApplicationTests {
         appointmentDTO.setPatient(patient);
         appointmentDTO.setDentist(dentist);
         appointmentDTO.setDate(new java.sql.Date(new java.util.Date().getTime()));
-        appointmentService.save(appointmentDTO);
+       Assertions.assertNotNull(appointmentService.save(appointmentDTO).getAppointment_id());
+    }
+
+    @Test
+    public void getAppointment() {
+        Assertions.assertNotNull(appointmentService.findById(1));
+    }
+    @Test
+    public void getPatient() {
+        Assertions.assertNotNull(patientService.findById(1));
+    }
+    @Test
+    public void getDentist() {
+        Assertions.assertNotNull(dentistService.findById(1));
+    }
+    @Test
+    public void getAllAppointments() {
+        Assertions.assertNotNull(appointmentService.findAll());
+    }
+    @Test
+    public void getAllPatients() {
+        Assertions.assertNotNull(patientService.findAll());
+    }
+    @Test
+    public void getAllDentists() {
+        Assertions.assertNotNull(dentistService.findAll());
+    }
+
+    @Test
+    public void updateAppointment() {
+        AppointmentDTO appointmentDTO = new AppointmentDTO();
+        PatientDTO patient = new PatientDTO();
+        patient.setPatient_id(1);
+        DentistDTO dentist = new DentistDTO();
+        dentist.setDentist_id(3);
+        appointmentDTO.setPatient(patient);
+        appointmentDTO.setDentist(dentist);
+        appointmentDTO.setDate(new java.sql.Date(new java.util.Date().getTime()));
+        Assertions.assertNotNull(appointmentService.update(1,appointmentDTO).getDentist().getDentist_id());
+    }
+    @Test
+    public void updatePatient() {
+        PatientDTO patientdto = new PatientDTO();
+        patientdto.setName("Pedro");
+        patientdto.setLastName("Perez");
+        AddressDTO address = new AddressDTO();
+        address.setCity("Ciudad");
+        address.setStreet("Calle");
+        address.setDoor(123);
+        address.setState("Estado");
+        patientdto.setAddress(address);
+        patientdto.setDni(123456789);
+        patientdto.setDateInit(new java.sql.Date(new java.util.Date().getTime()));
+        Assertions.assertEquals( patientService.update(2,patientdto).getAddress().getCity(), "Ciudad");
+    }
+    @Test
+    public void updateDentist() {
+        DentistDTO dentistDTO = new DentistDTO();
+        dentistDTO.setName("Dentist");
+        dentistDTO.setLastName("Dentist");
+        dentistDTO.setRegister(6151);
+        Assertions.assertEquals(dentistService.update(2,dentistDTO).getRegister(),6151);
+    }
+/*    @Test
+    public void deleteAppointment() {
     }*/
+
 }

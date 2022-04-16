@@ -1,0 +1,2 @@
+2022-04-16 19:46:06 ERROR GlobalExceptionHandler:18 - Required URI template variable 'id' for method parameter type Integer is present but converted to null
+[2022-04-16 19:47:17] [ ERROR] [GlobalExceptionHandler:&L] Required URI template variable 'id' for method parameter type Integer is present but converted to null

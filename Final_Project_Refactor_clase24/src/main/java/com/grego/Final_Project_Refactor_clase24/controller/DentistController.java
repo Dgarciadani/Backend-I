@@ -4,6 +4,7 @@ package com.grego.Final_Project_Refactor_clase24.controller;
 import com.grego.Final_Project_Refactor_clase24.domain.Dentist;
 import com.grego.Final_Project_Refactor_clase24.dto.DentistDTO;
 import com.grego.Final_Project_Refactor_clase24.services.IDentistService;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,7 @@ import javax.validation.Valid;
 @RequestMapping("/dentist")
 @CrossOrigin(origins = "*")
 public class DentistController {
-
+    private final static Logger logger = org.apache.logging.log4j.LogManager.getLogger(DentistController.class);
     @Autowired
     private IDentistService dentistService;
 
