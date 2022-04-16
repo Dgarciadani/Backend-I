@@ -19,8 +19,6 @@ public class PatientService implements IPatientService {
     @Autowired
     private ModelMapper modelmapper;
 
-
-
     @Override
     public PatientDTO findById(Integer id) {
         return patientRepository.findById(id).map(this::mapToDTO).orElse(null);

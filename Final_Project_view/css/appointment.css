@@ -228,6 +228,7 @@ footer button:hover {
 }
 .all-list button {
   width: 100%;
+  color: white;
 }
 .all-list {
   list-style: none;
@@ -246,7 +247,6 @@ footer button:hover {
   margin-top: 1px;
   margin-left: 1px;
 }
-
 
 footer th {
   color: #fcf8f4;
@@ -322,9 +322,9 @@ table button {
   font-weight: 300;
   font-style: italic;
   padding: 10px;
-  width: 100%;
+  width: 90%;
   border-radius: 10px;
-  background-color: #659DBF;
+  background-color: #659dbf;
   color: white;
 }
 .dentist-data select {
@@ -333,9 +333,9 @@ table button {
   font-weight: 300;
   font-style: italic;
   padding: 10px;
-  width: 100%;
+  width: 90%;
   border-radius: 10px;
-  background-color: #659DBF;
+  background-color: #659dbf;
   color: white;
 }
 
@@ -395,7 +395,7 @@ table button {
   display: flex;
   flex-direction: row;
 }
-#X {
+.btn-group #X {
   width: 35px;
   transition: all 0.2s ease-in-out;
   border-radius: 12px;
@@ -404,11 +404,36 @@ table button {
   background-color: #ca3d3d;
   color: #f7f9fb;
 }
-.patient-btn button{
-  color:white;
+.patient-btn button {
+  color: white;
 }
 .appointment_data i {
   color: #80787b;
   font-family: fenwick, sans-serif;
   font-weight: 200;
+}
+.btn-group {
+  display: flex;
+
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  
+}
+.btn-group button:hover {
+  background-color: #ca3d3d;
+  color: #f7f9fb;
+}
+.dentist-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  /* background-color:green; */
+  width: 50%;
+}
+.patient-select {
+  margin-bottom: 40px;
 }

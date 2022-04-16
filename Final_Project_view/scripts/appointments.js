@@ -7,7 +7,25 @@ window.addEventListener("load", () => {
   const findAllBtn = document.querySelector(".btn-findall");
   const allAppointments_space = document.querySelector(".all-list");
   const newAppointmentBtn = document.querySelector(".btn-add");
-
+  const hours = [
+    "10:00",
+    "10:30",
+    "11:00",
+    "11:30",
+    "12:00",
+    "12:30",
+    "13:00",
+    "13:30",
+    "14:00",
+    "14:30",
+    "15:00",
+    "15:30",
+    "16:00",
+    "16:30",
+    "17:00",
+    "17:30",
+    "18:00",
+  ];
   const actualLocation = () => {
     if (window.location.pathname === "/patient.html") {
       document.querySelector(".btn-patients").classList.add("active");
@@ -78,7 +96,10 @@ window.addEventListener("load", () => {
       minute: "2-digit",
     })}</p>
     <p><i>Price:</i>$${appointment.price == null ? "0" : appointment.price}</p>
+    <div clas="btn-group">
     <button class="btn-edit">Edit</button>
+    <button class="btn-delete" id="X">Delete</button>
+    </div>
     `;
     const editBtn = document.querySelector(".btn-edit");
     editBtn.addEventListener("click", () => {
@@ -87,6 +108,13 @@ window.addEventListener("load", () => {
       setTimeout(() => {
         renderEditForm();
       }, 100);
+    });
+
+    const deleteBtn = document.querySelector(".btn-delete");
+    deleteBtn.addEventListener("click", () => {
+      confirm("Are you sure you want to delete this appointment?")
+        ? deleteAppointment(appointment.appointment_id)
+        : alert("Canceled");
     });
   };
 
@@ -125,12 +153,19 @@ window.addEventListener("load", () => {
     <input type="date" name="date" id="date" required value=${
       new Date(apptemp.date).toISOString().split("T")[0]
     }>
-    <input type="time" name="time" id="time" required value=${new Date(
+    <input type="time" name="time" id="time" required  list="open-hours" value=${new Date(
       apptemp.date
     ).toLocaleTimeString("en-GB", {
       hour: "2-digit",
       minute: "2-digit",
     })}>
+
+    <datalist id="open-hours">
+    ${hours.map((hora) => {
+      return `<option value="${hora}">`;
+    })}
+    
+</datalist>
     <input type="number" name="price" id="price" step=".01" required value=${
       apptemp.price
     }>
@@ -190,9 +225,18 @@ window.addEventListener("load", () => {
     appointment_space.innerHTML = `
         <h4>Appointment data</h4>
         <form class="appointment-form">
-        <input type="date" name="date" id="date" required>
-        <input type="time" name="time" id="time" required>
-        <input type="number" name="price" id="price" step=".01" required>
+        <input type="date" name="date" id="date" required value=${
+          new Date().toISOString().split("T")[0]
+        }>
+        <input type="time" name="time" id="time" required min="10:00" max="18:00" list="open-hours-quarter">
+        <input type="number" name="price" id="price" step=".01" required >
+        <datalist id="open-hours-quarter">
+        ${hours.map((hora) => {
+          return `<option value="${hora}">`;
+        })}
+        
+    </datalist>
+     
         <div class="btn-group">
         <button type="submit" class="btn-submit">Add Appointment</button>
         <button class="btn-cancel" id="X">X</button>
@@ -306,7 +350,7 @@ window.addEventListener("load", () => {
     appointments.forEach((appointment) => {
       const appo_table = document.querySelector(".appo_table");
       appo_table.innerHTML += `<tr>
-<td><button class="patient-btn" id="${appointment.appointment_id}">✔️</button></td>
+<td><button class="patient-btn" id="${appointment.appointment_id}">✔</button></td>
 <td>${appointment.patient.name} ${appointment.patient.lastName}</td>
 <td>${appointment.dentist.name} ${appointment.dentist.lastName}</td>
 <td>${new Date(appointment.date).toLocaleDateString()}</td>
@@ -344,7 +388,6 @@ window.addEventListener("load", () => {
         appointments.sort((a, b) => {
           return new Date(a.date) - new Date(b.date);
         });
-
 
         console.log(appointments);
         renderAllAppointments(appointments);
@@ -403,5 +446,23 @@ window.addEventListener("load", () => {
       .catch((err) => {
         console.log(err);
       });
+  };
+  deleteAppointment = (id) => {
+    let settings = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+    };
+    fetch(urlRoot + "appointment/id=" + id, settings).then((response) => {
+      if (response.ok) {
+        dentist_space.innerHTML = "";
+        patient_space.innerHTML = "";
+        appointment_space.innerHTML = "";
+        getAllAppointments();
+        alert("Appointment deleted successfully");
+      }
+      throw new Error(response.statusText);
+    });
   };
 });
