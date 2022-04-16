@@ -1,7 +1,7 @@
 @import url("https://use.typekit.net/hdb4hwe.css");
 
 body {
-  background-color: #91C5E3;
+  background-color: #91c5e3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,14 +35,13 @@ header button {
   font-style: normal;
 }
 button:hover {
-  background-color: #1F628C;
+  background-color: #1f628c;
   color: #ffffff;
 }
 
 .active {
-  background-color: #1F628C;
+  background-color: #1f628c;
   color: #ffffff;
-
 }
 
 header input {
@@ -128,16 +127,15 @@ main {
   border: none;
   border-radius: 15px;
   padding: 10px;
-  margin: 10px;
+  margin-top: 10px;
   transition: all 0.2s ease-in-out;
-  margin-left: 10px;
-  width: 150px;
+  width: 110px;
   font-family: fenwick, sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 .user button:hover {
-  background-color: #1F628C;
+  background-color: #1f628c;
   color: #f7f9fb;
 }
 .address_data {
@@ -167,7 +165,7 @@ main {
   border: none;
   border-radius: 10px;
   text-align: left;
-  background-color: #659DBF;
+  background-color: #659dbf;
   margin-bottom: 50px;
   padding-top: 10px;
   padding-bottom: 15px;
@@ -185,7 +183,7 @@ main {
   color: #fcf8f4;
   font-family: fenwick, sans-serif;
 }
-.appo_table tr{
+.appo_table tr {
   margin-top: 100px;
   margin-bottom: 100px;
   color: #fcf8f4;
@@ -222,11 +220,11 @@ footer button {
   font-style: normal;
 }
 footer button:hover {
-  background-color: #1F628C;
+  background-color: #1f628c;
   color: #f7f9fb;
 }
 .Search-all {
-  background-color: #659DBF;
+  background-color: #659dbf;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -254,7 +252,9 @@ footer button:hover {
 .editButtons button {
   margin-top: 1px;
   margin-left: 1px;
+  width: 150px;
 }
+
 
 #X {
   width: 30px;
@@ -291,3 +291,7 @@ table button {
   text-align: right;
   justify-content: right;
 }
+.user-buttons #X {
+  border-radius: 15px;
+  width: 100px;
+} 

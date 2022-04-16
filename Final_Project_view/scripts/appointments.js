@@ -341,6 +341,11 @@ window.addEventListener("load", () => {
         throw new Error(response.statusText);
       })
       .then((appointments) => {
+        appointments.sort((a, b) => {
+          return new Date(a.date) - new Date(b.date);
+        });
+
+
         console.log(appointments);
         renderAllAppointments(appointments);
       })

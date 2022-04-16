@@ -73,7 +73,7 @@ window.addEventListener("load", () => {
     });
     document.querySelector(".save_cancel").addEventListener("click", () => {
       getUserData(JSON.parse(sessionStorage.getItem("user")).dentist_id);
-    })
+    });
   };
   const renderUserData = (user) => {
     profile_space.innerHTML = `
@@ -81,12 +81,20 @@ window.addEventListener("load", () => {
     <div class="user">
     <h3> ${user.name} ${user.lastName} </h3>
     <p> <i>register: </i>${user.register} </p>
+    <div class="dentis_buttons">
     <button class="edit_profile">Edit Profile</button>
+    <button class="delete_dentist" id="X">Delete</button>
+    </div>
     </div>`;
 
     const edit_profile = document.querySelector(".edit_profile");
     edit_profile.addEventListener("click", () => {
       renderEditUser();
+    });
+
+    const delete_dentist = document.querySelector(".delete_dentist");
+    delete_dentist.addEventListener("click", () => {
+      detectAppointment(user.dentist_id);
     });
   };
   const renderEditUser = () => {
@@ -115,7 +123,6 @@ window.addEventListener("load", () => {
     document.querySelector("button.save_cancel").addEventListener("click", () => {
       getUserData(usertemp.dentist_id);
     });
-    
   };
 
   /* const renderAppointments = (appointments) => {
@@ -210,6 +217,8 @@ window.addEventListener("load", () => {
         throw new Error(response.statusText);
       })
       .then((appointments) => {
+        sessionStorage.removeItem("appointment");
+        sessionStorage.setItem("appointments", JSON.stringify(appointments));
         console.log(appointments);
         renderAppointmentsTable(appointments);
       });
@@ -230,6 +239,15 @@ window.addEventListener("load", () => {
         throw new Error(response.statusText);
       })
       .then((dentists) => {
+        dentists.sort(function (a, b) {
+          if (a.name < b.name) {
+            return -1;
+          }
+          if (a.name > b.name) {
+            return 1;
+          }
+          return 0;
+        });
         console.log(dentists);
         renderTableAllDentist(dentists);
       });
@@ -251,7 +269,7 @@ window.addEventListener("load", () => {
         throw new Error(response.statusText);
       })
       .then((user) => {
-        sessionStorage.clear();
+        sessionStorage.removeItem("user");
         sessionStorage.setItem("user", JSON.stringify(user));
         console.log(user);
         renderUserData(JSON.parse(sessionStorage.getItem("user")));
@@ -275,12 +293,13 @@ window.addEventListener("load", () => {
         throw new Error(response.statusText);
       })
       .then((user) => {
-        sessionStorage.clear();
+        sessionStorage.removeItem("user");
         sessionStorage.setItem("user", JSON.stringify(user));
         console.log(user);
         renderUserData(JSON.parse(sessionStorage.getItem("user")));
         getAppointment(user.dentist_id);
         console.log(sessionStorage.getItem("user"));
+        getAllDentist();
       });
   };
 
@@ -304,12 +323,12 @@ window.addEventListener("load", () => {
       appo_table.innerHTML += `
     <tr>
     <td>${new Date(appointment.date).toLocaleDateString()}</td>
-    <td>${new Date(appointment.date).toLocaleTimeString("en-GB",{
+    <td>${new Date(appointment.date).toLocaleTimeString("en-GB", {
       hour: "2-digit",
-      minute: "2-digit"
+      minute: "2-digit",
     })}</td>
     <td>${appointment.patient.name}</td>
-    <td>$${appointment.price==null? "0": appointment.price}</td>
+    <td>$${appointment.price == null ? "0" : appointment.price}</td>
    
     </tr>`;
     });
@@ -340,6 +359,50 @@ window.addEventListener("load", () => {
       dentist.addEventListener("click", (e) => {
         getUserData(e.target.id);
       });
+    });
+  };
+
+  detectAppointment = (id) => {
+    if (JSON.parse(sessionStorage.getItem("appointments")).length > 0) {
+      confirm("This dentist has an appointment, do you want to delete it?")
+        ? deleteAppointments(id)
+        : console.log("Non deleted");
+    } else {
+      confirm("Delete dentist?") ? deleteDentist(id) : console.log("Non deleted");
+    }
+  };
+
+  deleteDentist = (id) => {
+    let settings = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+    };
+    fetch(urlRoot + "dentist/id=" + id, settings).then((response) => {
+      if (response.ok) {
+        alert("Dentist deleted");
+        profile_space.innerHTML = "";
+        appointment_space.innerHTML = "";
+        getAllDentist();
+      }
+      throw new Error(response.statusText);
+    });
+  };
+  const deleteAppointments = (id) => {
+    let settings = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+    };
+    fetch(urlRoot + "appointment/dentist=" + id, settings).then((response) => {
+      if (response.ok) {
+        alert("Appointments deleted");
+        sessionStorage.removeItem("appointments");
+        deleteDentist(id);
+      }
+      throw new Error(response.statusText);
     });
   };
 });

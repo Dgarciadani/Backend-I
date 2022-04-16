@@ -96,7 +96,7 @@ window.addEventListener("load", () => {
       postNewPatient(newUser);
     });
     document.querySelector(".save_cancel").addEventListener("click", () => {
-      getUserData(JSON.parse(sessionStorage.getItem("user")).patient_id)
+      getUserData(JSON.parse(sessionStorage.getItem("user")).patient_id);
     });
   };
   const renderUserData = (user) => {
@@ -106,12 +106,20 @@ window.addEventListener("load", () => {
     <h3> ${user.name} ${user.lastName} </h3>
     <p> ${user.email} </p>
     <p> ${user.dni}</p>
+    <div class="user-buttons">
     <button class="edit_profile">Edit Profile</button>
+    <button class="delete_profile" id="X">Delete</button>
+    </div>
     </div>`;
 
     const edit_profile = document.querySelector(".edit_profile");
     edit_profile.addEventListener("click", () => {
       renderEditUser();
+    });
+
+    const delete_profile = document.querySelector(".delete_profile");
+    delete_profile.addEventListener("click", () => {
+      detectAppointment(user.patient_id);
     });
   };
   const renderEditUser = () => {
@@ -259,9 +267,17 @@ window.addEventListener("load", () => {
         throw new Error(response.statusText);
       })
       .then((appointments) => {
+        appointments.sort((a, b) => {
+          return new Date(a.date) - new Date(b.date);
+        });
+        sessionStorage.removeItem("appointments");
         console.log(appointments);
+        console.log(appointments.length);
+        sessionStorage.setItem("appointments", JSON.stringify(appointments));
+        console.log(JSON.parse(sessionStorage.getItem("appointments")).length);
         renderAppointmentsTable(appointments);
       });
+    //return the appointments
   };
 
   const getAllPatients = () => {
@@ -279,6 +295,16 @@ window.addEventListener("load", () => {
         throw new Error(response.statusText);
       })
       .then((patients) => {
+        patients.sort(function (a, b) {
+          if (a.name < b.name) {
+            return -1;
+          }
+          if (a.name > b.name) {
+            return 1;
+          }
+          return 0;
+        });
+        console.log(patients);
         console.log(patients);
         renderTableAllPatients(patients);
       });
@@ -300,7 +326,7 @@ window.addEventListener("load", () => {
         throw new Error(response.statusText);
       })
       .then((user) => {
-        sessionStorage.clear();
+        sessionStorage.removeItem("user");
         sessionStorage.setItem("user", JSON.stringify(user));
         console.log(user);
         renderUserData(JSON.parse(sessionStorage.getItem("user")));
@@ -325,13 +351,14 @@ window.addEventListener("load", () => {
         throw new Error(response.statusText);
       })
       .then((user) => {
-        sessionStorage.clear();
+        sessionStorage.removeItem("user");
         sessionStorage.setItem("user", JSON.stringify(user));
         console.log(user);
         renderUserData(JSON.parse(sessionStorage.getItem("user")));
         renderAddressData(JSON.parse(sessionStorage.getItem("user")));
         getAppointment(user.patient_id);
         console.log(sessionStorage.getItem("user"));
+        getAllPatients();
       });
   };
 
@@ -355,14 +382,45 @@ window.addEventListener("load", () => {
       appo_table.innerHTML += `
     <tr>
     <td>${new Date(appointment.date).toLocaleDateString()}</td>
-    <td>${new Date(appointment.date).toLocaleTimeString("en-GB",{
+    <td>${new Date(appointment.date).toLocaleTimeString("en-GB", {
       hour: "2-digit",
-      minute: "2-digit"
+      minute: "2-digit",
     })}</td>
     <td>${appointment.dentist.name}</td>
-    <td>$${appointment.price==null? "0": appointment.price}</td>
+    <td>$${appointment.price == null ? "0" : appointment.price}</td>
    
     </tr>`;
+    });
+  };
+
+  const detectAppointment = (id) => {
+    if (JSON.parse(sessionStorage.getItem("appointments")).length > 0) {
+      if(confirm("This patient has appointments, are you sure you want to delete?")){
+        deleteAppointments(id)
+      }
+    } else {
+      confirm("Are you sure you want to delete?") && deletePatient(id);
+        
+    }
+  };
+
+  const deleteUser = (id) => {
+    let settings = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+    };
+    fetch(urlRoot + "patient/id=" + id, settings).then((response) => {
+      if (response.ok) {
+        alert("User deleted");
+        sessionStorage.removeItem("user");
+        profile_space.innerHTML = "";
+        address_space.innerHTML = "";
+        appointment_space.innerHTML = "";
+        getAllPatients();
+      }
+      throw new Error(response.statusText);
     });
   };
 
@@ -401,4 +459,23 @@ window.addEventListener("load", () => {
       });
     });
   };
+
+
+  const deleteAppointments=(id)=>{
+    let settings = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+    };
+    fetch(urlRoot + "appointment/patient=" + id, settings)
+    .then((response) => {
+      if (response.ok) {
+        alert("Appointments deleted");
+        sessionStorage.removeItem("appointments");
+        deleteUser(id);
+      }
+      throw new Error(response.statusText);
+    });
+  }
 });

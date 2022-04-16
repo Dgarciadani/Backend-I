@@ -1,7 +1,7 @@
 @import url("https://use.typekit.net/hdb4hwe.css");
 
 body {
-  background-color: #91C5E3;
+  background-color: #91c5e3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,14 +35,13 @@ header button {
   font-style: normal;
 }
 button:hover {
-  background-color: #1F628C;
+  background-color: #1f628c;
   color: #ffffff;
 }
 
 .active {
-  background-color: #1F628C;
+  background-color: #1f628c;
   color: #ffffff;
-
 }
 
 header input {
@@ -60,7 +59,7 @@ main {
   align-items: center;
   background-color: white;
   border-radius: 10px;
-  width: 80%;
+  width: 60%;
   color: #000;
 }
 .container_patient {
@@ -69,7 +68,7 @@ main {
   /* background-color: red; */
   display: flex;
   justify-content: space-between;
-  transition: all 0.2s ease-in-out; 
+  transition: all 0.2s ease-in-out;
 }
 .container_patient input {
   border: 1px solid #e5e9f8;
@@ -78,12 +77,12 @@ main {
   font-weight: 400;
   font-style: bold;
   height: 25px;
- 
 }
 
 .user_data {
   display: flex;
   justify-content: space-around;
+  width: 40%;
 }
 .user_data i {
   color: #80787b;
@@ -98,13 +97,13 @@ main {
   /* background-color: rebeccapurple; */
   display: flex;
   align-items: center;
-  margin: 50px;
+  margin: 40px;
   margin-top: 60px;
-  margin-left: 200px;
+  margin-left: 150px;
   transition: all 0.2s ease-in-out;
 }
 .profile_data img {
-  margin: 10px;
+  margin-right: 15px;
   margin-bottom: 50px;
   max-width: 140px;
   max-height: 140px;
@@ -135,7 +134,7 @@ main {
   font-style: normal;
 }
 .user button:hover {
-  background-color: #1F628C;
+  background-color: #1f628c;
   color: #f7f9fb;
 }
 .address_data {
@@ -154,7 +153,7 @@ main {
   flex-direction: column;
   text-align: center;
   align-items: center;
-  width: 40%;
+  width: 50%;
   border-radius: 0px 10px 10px 0px;
 }
 
@@ -165,7 +164,7 @@ main {
   border: none;
   border-radius: 10px;
   text-align: left;
-  background-color: #659DBF;
+  background-color: #659dbf;
   margin-bottom: 50px;
   align-items: center;
   text-align: center;
@@ -183,7 +182,7 @@ main {
   color: #fcf8f4;
   font-family: fenwick, sans-serif;
 }
-.appo_table tr{
+.appo_table tr {
   margin-top: 100px;
   margin-bottom: 100px;
   color: #fcf8f4;
@@ -200,8 +199,9 @@ main {
 }
 footer {
   margin-top: 30px;
-  width: 80%;
+  width: 60%;
   transition: all 0.2s ease-in-out;
+
 }
 footer h3 {
   color: white;
@@ -220,11 +220,11 @@ footer button {
   font-style: normal;
 }
 footer button:hover {
-  background-color: #1F628C;
+  background-color: #1f628c;
   color: #f7f9fb;
 }
 .Search-all {
-  background-color: #659DBF;
+  background-color: #659dbf;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -232,6 +232,7 @@ footer button:hover {
   flex-direction: column;
   margin-top: 20px;
   transition: 1s;
+
 }
 .all-list button {
   width: 100%;
@@ -254,7 +255,7 @@ footer button:hover {
   margin-left: 1px;
 }
 
-#X {
+.editButtons #X {
   width: 30px;
   transition: all 0.2s ease-in-out;
   border-radius: 12px;
@@ -289,7 +290,18 @@ table button {
   text-align: right;
   justify-content: right;
 }
-.img-dentist{
- border-radius:0%;
+.img-dentist {
+  border-radius: 0%;
+}
 
+.dentis_buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.dentis_buttons #X{
+  width: 100px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 15px;
 }

@@ -7,6 +7,7 @@ import com.grego.Final_Project_Refactor_clase24.repository.AppointmentRepository
 import com.grego.Final_Project_Refactor_clase24.services.IAppointmentService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -55,6 +56,12 @@ public class AppointmentService implements IAppointmentService {
     }
     public List<AppointmentDTO> findByDentistId(Integer id){
         return appointmentRepository.findByDentistId(id).stream().map(this::mapToDTO).collect(java.util.stream.Collectors.toList());
+    }
+    public void deleteByPatientId(Integer id){
+        appointmentRepository.deleteByPatientId(id);
+    }
+    public void deleteByDentistId(Integer id){
+        appointmentRepository.deleteByDentistId(id);
     }
 
 

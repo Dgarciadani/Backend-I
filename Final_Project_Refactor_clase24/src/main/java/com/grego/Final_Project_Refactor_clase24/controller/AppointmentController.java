@@ -4,6 +4,7 @@ package com.grego.Final_Project_Refactor_clase24.controller;
 import com.grego.Final_Project_Refactor_clase24.dto.AppointmentDTO;
 import com.grego.Final_Project_Refactor_clase24.services.impl.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,6 +50,17 @@ public class AppointmentController {
     @GetMapping("/patient={id}")
     public ResponseEntity<Iterable<AppointmentDTO>> findAllAppointmentsByPatientId(@PathVariable Integer id) {
         return ResponseEntity.ok(appointmentService.findByPatientId(id));
+    }
+
+    @DeleteMapping("/dentist={id}")
+    public ResponseEntity<String> deleteAppointmentByDentistId(@PathVariable Integer id) {
+        appointmentService.deleteByDentistId(id);
+        return ResponseEntity.ok().body("Appointments deleted");
+    }
+@DeleteMapping("/patient={id}")
+    public ResponseEntity<String> deleteAppointmentByPatientId(@PathVariable Integer id) {
+        appointmentService.deleteByPatientId(id);
+        return ResponseEntity.ok().body("Appointments deleted");
     }
 
 }

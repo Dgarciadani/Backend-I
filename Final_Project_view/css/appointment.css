@@ -281,8 +281,10 @@ table button {
   justify-content: space-between;
   width: 100%;
   transition: all 0.2s ease-in-out;
+  margin-left: 20px;
   /* background-color:red */
 }
+
 .appointment_data button {
   background-color: #659dbf;
   color: #f7f9fb;
@@ -404,4 +406,9 @@ table button {
 }
 .patient-btn button{
   color:white;
+}
+.appointment_data i {
+  color: #80787b;
+  font-family: fenwick, sans-serif;
+  font-weight: 200;
 }
