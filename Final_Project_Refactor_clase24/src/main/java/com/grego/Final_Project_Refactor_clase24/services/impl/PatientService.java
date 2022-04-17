@@ -2,6 +2,7 @@ package com.grego.Final_Project_Refactor_clase24.services.impl;
 
 import com.grego.Final_Project_Refactor_clase24.domain.Patient;
 import com.grego.Final_Project_Refactor_clase24.dto.PatientDTO;
+import com.grego.Final_Project_Refactor_clase24.exceptions.ResourceNotFoundException;
 import com.grego.Final_Project_Refactor_clase24.repository.AppointmentRepository;
 import com.grego.Final_Project_Refactor_clase24.repository.PatientRepository;
 import com.grego.Final_Project_Refactor_clase24.services.IPatientService;
@@ -21,6 +22,7 @@ public class PatientService implements IPatientService {
 
     @Override
     public PatientDTO findById(Integer id) {
+       // return patientRepository.findById(id).map(this::mapToDTO).orElseThrow(() -> new ResourceNotFoundException("Patient", "id", id));
         return patientRepository.findById(id).map(this::mapToDTO).orElse(null);
     }
 
